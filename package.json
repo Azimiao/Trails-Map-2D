@@ -4,24 +4,30 @@
   "private": true,
   "dependencies": {
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
+    "@react-leaflet/core": "^2.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "draft-js": "^0.11.7",
+    "fontawesome-free": "^1.0.4",
     "html-react-parser": "^4.0.0",
     "leaflet": "^1.9.4",
+    "leaflet-sidebar-v2": "^3.2.3",
+    "mobx": "^6.10.0",
+    "mobx-react": "^9.0.0",
     "react": "^18.2.0",
     "react-contenteditable": "^3.3.7",
     "react-dom": "^18.2.0",
     "react-draft-wysiwyg": "^1.15.0",
     "react-leaflet": "npm:@azimiao/react-leaflet",
+    "react-leaflet-v2-sidebar": "^1.0.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco  start",
+    "build": "craco  build",
+    "test": "craco  test",
     "eject": "react-scripts eject",
     "removeCache": "node rmcache.js "
   },
@@ -45,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@craco/craco": "^7.1.0",
     "styled-components": "^6.0.3"
   }
 }

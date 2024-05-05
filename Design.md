@@ -65,3 +65,15 @@
         - Icon
         - Title
         - Content
+
+- 数据：两个 Json 文件
+一个是 list.json
+一个是 list.editable.json
+
+
+- 2024 补充:
+由于 LayerControll 为强制性,因此不再使用。
+
+所有 Marker 位于同一层级，通过自定义 State 控制显隐（以组为单位）
+
+需要调研：区域过小的情况下，自动合并插件是否支持自定义 ICON
