@@ -9,7 +9,12 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Component } from 'react';
 import { observer } from 'mobx-react';
 import { convertFromHTML } from 'draft-js';
+import ReactDropdown from 'react-dropdown';
+import "react-dropdown/style.css";
+import LayerList from '@/assets/LayerConfig';
 const prefix = 'leaflet-popup-button';
+
+
 
 
 const MarkerEditor = observer(class MarkerEditorC extends Component{
@@ -47,8 +52,6 @@ const MarkerEditor = observer(class MarkerEditorC extends Component{
         
         inputContentValue: "",
 		inputContent: "",
-
-		nametag: "",
 	};
 
 
@@ -60,6 +63,10 @@ const MarkerEditor = observer(class MarkerEditorC extends Component{
 	}
 
     render(){
+        const layerOptions = LayerList.getOptionsList();
+        const oldMarkerData = MarkerList.GetMarkerById(StateCache.EditingMarkerId);
+        const defaultOption = layerOptions.filter((item)=>{return item.value == oldMarkerData.layerId})[0];
+        console.log(defaultOption);
         return (
             <div className='marker-editor'>
                 <h1>编辑 Marker 点 {StateCache ? StateCache.EditingMarkerId : "null"}</h1>
@@ -67,6 +74,10 @@ const MarkerEditor = observer(class MarkerEditorC extends Component{
                     className="marker-editor-title"
                     html={this.state.inputTitleValue}
                 />
+                <h3>图层类型</h3>
+                <ReactDropdown options={layerOptions} value={defaultOption}></ReactDropdown>
+                <h3>外部ICON</h3>
+                <input className='marker-editor-input'/>
                 <Editor
                     editorState={this.state.editorState}
                     onEditorStateChange={this.onEditorContentStateChange}

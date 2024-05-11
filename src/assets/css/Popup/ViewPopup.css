@@ -34,3 +34,8 @@
 .ViewPopup .ViewPopupContainer .PopupContent p{
     margin-top: 0;
 }
+
+.ViewPopup .popUpSpace{
+    display:inline-block;
+    min-width: 0.5em;
+}

@@ -45,6 +45,7 @@ class ViewPopup extends React.Component {
                                 >
                                     Del
                                 </button>
+                                <span className="popUpSpace"></span>
                                 <button
                                     onClick={() => this.props.onEditClick(this.props.markerId)}
                                     className={"edit"}

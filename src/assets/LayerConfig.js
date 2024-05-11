@@ -76,7 +76,45 @@ let LayerList = observable({
             ],
             "showTitle": false
         },
-    ]
+    ],
+    getAllLayerKey() {
+        let allLayerKey = [];
+        this.data.forEach(element => {
+            allLayerKey.push(element.key);
+        });
+        return allLayerKey;
+    },
+    getLayerById(id) {
+        for (const key in this.data) {
+            if (Object.hasOwnProperty.call(this.data, key)) {
+                const element = this.data[key];
+                if (element.id == id) {
+                    return element;
+                }
+            }
+        }
+        return null;
+    },
+    getLayerByKey(key){
+        for (let i = 0; i < this.data.length; i++) {
+            const element = this.data[i];
+            if(element.key == key){
+                return element;
+            }
+        }
+        return null;
+    },
+    getOptionsList(){
+        let optionList = [];
+        for (let i = 0; i < this.data.length; i++) {
+            const element = this.data[i];
+            let a = {};
+            a.value = element.id;
+            a.label = element.key;
+            optionList.push(a);
+        }
+        return optionList;
+    }
 });
 
 export default LayerList;
