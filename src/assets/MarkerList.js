@@ -110,8 +110,12 @@ let MarkerList = observable(
                         positionLng
                     ],
                     "icon": "nature.png",
-                    "title": "待编辑",
-                    "content": "<p>待编辑</p>",
+                    "title": "请输入标记点标题",
+                    "content": `<ol>
+                    <li>这是一个新创建的标记点，请编辑标记点并点击保存</li>
+                    <li>若想删除标记点，请点击左下角红色删除按钮</li>
+                    <li>更多内容请参考:<a href="https://www.azimiao.com" target="_blank">梓喵出没博客</a></li>
+                    </ol>`,
                 })
             });
             return lastId;
