@@ -6,35 +6,50 @@ import "fontawesome-free/css/all.css";
 import "../assets/css/LiveMap.css";
 //TODO: use colorful marker image
 import marker from "leaflet/dist/images/marker-icon.png";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react";
 
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 import "@changey/react-leaflet-markercluster/dist/styles.min.css";
-import ViewPopup from "./ViewPopup";
+
 import LayerList from "../assets/LayerConfig";
 import MarkerList from "../assets/MarkerList";
 import StateCache from "../assets/StateCache";
 
 // import { useV2Sidebar } from "react-leaflet-v2-sidebar";
-import CountryMarker from "./Markers/CountryMarker";
+import ViewMarker from "./Markers/ViewMarker";
 import MarkerEditor from "./MarkerEditor";
 
 let ViewMap = observer(function (props) {
+
+
     // LatLng(lat/纬度,lng/经度),横纬竖经
     let bounds = L.latLngBounds([L.latLng(0, 0), L.latLng(-128, 128)]);
-    let markerIcon = new L.Icon({
-        iconUrl: marker,
-        iconRetinaUrl: marker,
-        popupAnchor: [0, 0],
-        iconSize: [32, 45]
-    });
+    const hasFitBounds = useRef(false);
+    
+    const FitBoundsOnce = ()=> {
+        const map = useMap();
 
+        useEffect(()=>{
+            if (!hasFitBounds.current) {
+            // 设置适当的边界
+            const bounds = L.latLngBounds(
+                [-40.1875,13.4375], // 南西角坐标
+                [-89.8125, 113.9375]   // 东北角坐标
+            );
+            map.fitBounds(bounds);
+            hasFitBounds.current = true; // 标记 fitBounds 已执行
+        }},[map]);
+
+        return null;
+    }
 
     let markerRef1 = React.createRef();
 
     // pre load images
-
+    useEffect(()=>{
+        //FitBoundsMap();
+    },[]);
     return (
         <React.Fragment>
             <MapContainer
@@ -47,9 +62,9 @@ let ViewMap = observer(function (props) {
                 doubleClickZoom={false}
                 zoom={3}>
                 <TileLayer
-                    url="./maps/map2/{z}/{x}_{y}.png"
+                    url="./maps/kai-map/{z}/{x}_{y}.png"
                     minZoom={3}
-                    maxZoom={6}
+                    maxZoom={7}
                     noWrap={true}
                     bounds={bounds}
                 >
@@ -62,36 +77,34 @@ let ViewMap = observer(function (props) {
 
                             return (
                                 <LayersControl.Overlay key={layerData.id} name={layerData.key} checked={true}>
-                                    <MarkerClusterGroup>
+                                    <MarkerClusterGroup 
+                                    // SpiderfyOnMaxZoom={true} 
+                                    // disableClusteringAtZoom={3}
+                                    >
 
                                         {
                                             MarkerList.GetDataListByLayer(layerData.id)?.map((originMarkData, index) => {
                                                 return (
-                                                    <CountryMarker
+                                                    <ViewMarker
                                                         myRef={markerRef1}
                                                         onEditClick={OnEditClick}
                                                         onDelClick={OnDelClick}
-                                                        markerData={{
-                                                            id: originMarkData.id,
-                                                            position: [originMarkData.position[0], originMarkData.position[1]],
-                                                            icon: originMarkData.icon ?? null,
-                                                            title: originMarkData.title ?? "Not Valid",
-                                                            content: originMarkData.content ?? "Not Valid"
-                                                        }}>
-                                                    </CountryMarker>
-
+                                                        onExportAllClick={OnExportAllClick}
+                                                        markerData={originMarkData}>
+                                                    </ViewMarker>
                                                 )
                                             })
                                         }
 
                                     </MarkerClusterGroup>
-                                </LayersControl.Overlay>)
+                                </LayersControl.Overlay>
+                            )
 
                         })
                     }
                 </LayersControl>
 
-
+                <FitBoundsOnce></FitBoundsOnce>
                 {/* <Sidebar /> */}
             </MapContainer>
             {StateCache.IsEditingMode && StateCache.IsEditing ?
@@ -100,6 +113,7 @@ let ViewMap = observer(function (props) {
                         onCloseClick={OnCloseClick}
                         onSaveClick={OnSaveClick}
                         onDelClick={OnDelClick}
+                        onExportAllClick={OnExportAllClick}
                     />
                 </div>
                 : null}
@@ -148,15 +162,29 @@ const OnDelClick = async function (id) {
     await MarkerList.RemoveMarker(id);
 }
 
-const OnSaveClick = function (id) {
+const OnSaveClick = function (id,newData) {
     console.log(`save ${id}`);
     StateCache.SetIsEditing(false);
+    console.log(newData);
+    MarkerList.UpdateMarker(id,newData);
 }
 
 const OnEditClick = function (id) {
     console.log(`edit ${id}`);
     StateCache.SetEditingMarkerId(id);
     StateCache.SetIsEditing(true);
+}
+
+const OnExportAllClick = function(){
+    let jsonString = JSON.stringify(MarkerList.data);
+    const blob = new Blob([jsonString],{type:"application/json"});
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    var now = new Date();
+    link.download = `markerList-${now.getFullYear()}-${now.getMonth()}-${now.getDate()}-${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}.json`;
+    link.click();
+    URL.revokeObjectURL(link.href);
 }
 
 // function Sidebar() {

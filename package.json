@@ -2,6 +2,7 @@
   "name": "trails-map",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
     "@react-leaflet/core": "^2.1.0",
@@ -9,6 +10,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "draft-js": "^0.11.7",
+    "draft-js-export-html": "^1.4.1",
     "fontawesome-free": "^1.0.4",
     "html-react-parser": "^4.0.0",
     "leaflet": "^1.9.4",

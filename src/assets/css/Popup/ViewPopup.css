@@ -28,12 +28,18 @@
 
     scrollbar-width: thin;
     scrollbar-color: rgb(255, 211, 68) rgb(218, 218, 218);
-    
+
 }
+
+.ViewPopup .ViewPopupContainer .PopupContent figure{
+        margin:0
+}    
 
 .ViewPopup .ViewPopupContainer .PopupContent p{
     margin-top: 0;
 }
+
+
 
 .ViewPopup .popUpSpace{
     display:inline-block;

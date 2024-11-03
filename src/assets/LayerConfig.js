@@ -6,76 +6,120 @@ let LayerList = observable({
         {
             "id": 0,
             "key": "country",
-            "icon": "",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": true
+            "icon": "country.png",
+            "size": "XXXL",
+            "showTitle": true,
+            "zIndexOffset":999999,
+            "autoGroup": false,
         },
         {
             "id": 1,
             "key": "region",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": true
+            "icon": "",
+            "size":"XXL",
+            "showTitle": false,
+            "zIndexOffset":55555,
+            "autoGroup": false
         },
         {
             "id": 2,
-            "key": "town",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": false
+            "key": "city",
+            "icon": "city.png",
+            "size": "XL",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": false
         },
         {
             "id": 3,
             "key": "gate",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": false
+            "icon": "gate.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
         },
         {
             "id": 4,
             "key": "road",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": false
+            "icon": "cave.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
         },
         {
             "id": 5,
             "key": "mountain",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": false
+            "icon": "mountain.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
         },
         {
             "id": 6,
             "key": "river",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": false
+            "icon": "river-2.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
         },
         {
             "id": 7,
-            "key": "special",
-            "size": [
-                32,
-                45
-            ],
-            "showTitle": false
+            "key": "nature",
+            "icon": "nature.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
         },
+        {
+            "id": 8,
+            "key": "special",
+            "icon": "cave.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        },
+        {
+            "id": 1000,
+            "key":"village",
+            "icon": "village.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        },
+        {
+            "id": 2000,
+            "key":"airport",
+            "icon": "airport.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        },
+        {
+            "id": 3000,
+            "key":"cave",
+            "icon": "cave.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        },
+        {
+            "id": 4000,
+            "key":"port",
+            "icon": "port.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        }
     ],
     getAllLayerKey() {
         let allLayerKey = [];
