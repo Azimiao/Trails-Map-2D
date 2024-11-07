@@ -6,7 +6,7 @@ let LayerList = observable({
         {
             "id": 0,
             "key": "country",
-            "icon": "country.png",
+            "icon": "unknown.png",
             "size": "XXXL",
             "showTitle": true,
             "zIndexOffset":999999,
@@ -60,7 +60,7 @@ let LayerList = observable({
         {
             "id": 6,
             "key": "river",
-            "icon": "river-2.png",
+            "icon": "river.png",
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,

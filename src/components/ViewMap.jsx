@@ -80,6 +80,7 @@ let ViewMap = observer(function (props) {
                                     <MarkerClusterGroup 
                                     // SpiderfyOnMaxZoom={true} 
                                     // disableClusteringAtZoom={3}
+                                    maxClusterRadius={50}
                                     >
 
                                         {
@@ -107,7 +108,7 @@ let ViewMap = observer(function (props) {
                 <FitBoundsOnce></FitBoundsOnce>
                 {/* <Sidebar /> */}
             </MapContainer>
-            {StateCache.IsEditingMode && StateCache.IsEditing ?
+            {StateCache.IsEditorMode && StateCache.IsEditing ?
                 <div id={"MapEditor"}>
                     <MarkerEditor
                         onCloseClick={OnCloseClick}
@@ -129,6 +130,9 @@ let lastClickPos = {
 const MapEvents = () => {
     useMapEvent({
         async click(e) {
+            if(!StateCache.IsEditorMode){
+                return;
+            }
             console.log(e.latlng);
             let nowTime = Date.now();
             let nowPos = e.latlng;

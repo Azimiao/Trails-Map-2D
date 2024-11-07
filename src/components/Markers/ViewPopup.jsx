@@ -33,7 +33,7 @@ class ViewPopup extends React.Component {
                         {/* {content} */}
                     </div>
                     {
-                        StateCache.IsEditingMode ?
+                        StateCache.IsEditorMode ?
                             <React.Fragment>
                                 <button
                                     onClick={(e) => {

@@ -23,12 +23,11 @@
 .ViewPopup .ViewPopupContainer .PopupContent{ 
     width: 100%;
     margin: 12px 0px 24px 0px;
-    overflow-y: auto;
+    overflow-y: scroll;
     max-height: 300px;
-
     scrollbar-width: thin;
     scrollbar-color: rgb(255, 211, 68) rgb(218, 218, 218);
-
+    padding-right: 12px;
 }
 
 .ViewPopup .ViewPopupContainer .PopupContent figure{
@@ -38,8 +37,6 @@
 .ViewPopup .ViewPopupContainer .PopupContent p{
     margin-top: 0;
 }
-
-
 
 .ViewPopup .popUpSpace{
     display:inline-block;
