@@ -2,7 +2,7 @@ import { observable, runInAction } from "mobx";
 
 let StateCache = observable(
     {
-        IsEditorMode:false,
+        IsEditorMode:true,
         SetIsEditingMode(value){
             runInAction(()=>{
                 this.IsEditorMode = value;

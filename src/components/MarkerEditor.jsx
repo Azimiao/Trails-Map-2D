@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import ContentEditable from "react-contenteditable";
 import { Editor } from "react-draft-wysiwyg";
+import { Editor as ByteMDEditor,Viewer as ByteMDViewer } from '@bytemd/react';
+import 'bytemd/dist/index.css';
 import { ContentState, convertFromRaw, convertFromHTML, convertToRaw, EditorState,RichUtils } from 'draft-js';
 import Parser from 'html-react-parser';
 import StateCache from '../assets/StateCache';
@@ -14,6 +16,7 @@ import LayerList from '@/assets/LayerConfig';
 import { stateToHTML } from 'draft-js-export-html';
 import MarkerSize from '@/assets/MarkerSizeConfig';
 const prefix = 'leaflet-popup-button';
+
 
 
 
@@ -150,7 +153,18 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                     onChange={this.OnIconChanged}
                     defaultValue={this.state.icon}
                 />
-                <Editor
+                <ByteMDEditor
+                    value={this.state.inputContentValue}
+                    onChange={(v)=>{
+                        this.setState({
+                            inputContentValue:v
+                        })
+                    }}
+                />
+                {/* <ByteMDViewer 
+                    value={this.state.inputContentValue}
+                /> */}
+                {/* <Editor
                     customBlockRenderFunc={this.myBlockRendererFix}
                     editorState={this.state.editorState}
                     handleKeyCommand={(command) => {
@@ -193,7 +207,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                             }
                         }
                     }}
-                />
+                /> */}
                 <div
                     className="marker-editor-buttons"
                 >

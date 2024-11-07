@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@bytemd/react": "^1.21.0",
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
     "@react-leaflet/core": "^2.1.0",
     "@testing-library/jest-dom": "^5.16.5",
