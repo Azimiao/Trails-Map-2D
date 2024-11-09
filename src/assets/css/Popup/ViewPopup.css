@@ -30,12 +30,20 @@
     padding-right: 12px;
 }
 
+
+.ViewPopup .ViewPopupContainer .PopupContent img{ 
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
 .ViewPopup .ViewPopupContainer .PopupContent figure{
         margin:0
 }    
 
 .ViewPopup .ViewPopupContainer .PopupContent p{
     margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
 .ViewPopup .popUpSpace{

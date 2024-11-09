@@ -13,7 +13,7 @@ import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 import "@changey/react-leaflet-markercluster/dist/styles.min.css";
 
 import LayerList from "../assets/LayerConfig";
-import MarkerList from "../assets/MarkerList";
+import MarkerDataHelper from "../assets/MarkerDataHelper";
 import StateCache from "../assets/StateCache";
 
 // import { useV2Sidebar } from "react-leaflet-v2-sidebar";
@@ -84,7 +84,7 @@ let ViewMap = observer(function (props) {
                                     >
 
                                         {
-                                            MarkerList.GetDataListByLayer(layerData.id)?.map((originMarkData, index) => {
+                                            MarkerDataHelper.GetDataListByLayer(layerData.id)?.map((originMarkData, index) => {
                                                 return (
                                                     <ViewMarker
                                                         myRef={markerRef1}
@@ -141,7 +141,7 @@ const MapEvents = () => {
                 && Math.abs(lastClickPos.lng - nowPos.lng) < 0.1
             ) {
                 // 添加一个新 Marker
-                let a = await MarkerList.AddMarker(0, nowPos.lat, nowPos.lng);
+                let a = await MarkerDataHelper.AddMarker(8, nowPos.lat, nowPos.lng);
                 console.log(`Create and Editing ${a}`);
                 StateCache.SetEditingMarkerId(a);
                 StateCache.SetIsEditing(true);
@@ -163,14 +163,14 @@ const OnCloseClick = function (id) {
 const OnDelClick = async function (id) {
     console.log(`del ${id}`);
     StateCache.SetIsEditing(false);
-    await MarkerList.RemoveMarker(id);
+    await MarkerDataHelper.RemoveMarker(id);
 }
 
 const OnSaveClick = function (id,newData) {
     console.log(`save ${id}`);
     StateCache.SetIsEditing(false);
     console.log(newData);
-    MarkerList.UpdateMarker(id,newData);
+    MarkerDataHelper.UpdateMarker(id,newData);
 }
 
 const OnEditClick = function (id) {
@@ -180,7 +180,7 @@ const OnEditClick = function (id) {
 }
 
 const OnExportAllClick = function(){
-    let jsonString = JSON.stringify(MarkerList.data);
+    let jsonString = JSON.stringify(MarkerDataHelper.data);
     const blob = new Blob([jsonString],{type:"application/json"});
 
     const link = document.createElement("a");

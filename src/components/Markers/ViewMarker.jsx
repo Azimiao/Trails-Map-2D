@@ -48,6 +48,7 @@ const ViewMarker = (props) => {
                 markerId={props.markerData.id}
                 title={props.markerData.title}
                 content={props.markerData.content}
+                url={props.markerData.url ?? null}
                 onEditClick={props.onEditClick}
                 onDelClick={props.onDelClick}
                 onExportAllClick={props.onExportAllClick}

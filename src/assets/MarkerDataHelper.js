@@ -1,6 +1,6 @@
 import { observable, runInAction } from "mobx";
-import markerListData from "./MarkerList.json";
-let MarkerList = observable(
+import markerListData from "./MarkerData.json";
+let MarkerDataHelper = observable(
     {
         "data":markerListData,
         GetDataListByLayer(layerId) {
@@ -44,11 +44,9 @@ let MarkerList = observable(
                     ],
                     "icon": "",
                     "title": "请输入标记点标题",
-                    "content": `<ol>
-                    <li>这是一个新创建的标记点，请编辑标记点并点击保存</li>
-                    <li>若想删除标记点，请点击左下角红色删除按钮</li>
-                    <li>更多内容请参考:<a href="https://www.azimiao.com" target="_blank">梓喵出没博客</a></li>
-                    </ol>`,
+                    "content": `1. 这是一个新创建的标记点，请编辑标记点并点击保存
+2. 若想删除标记点，请点击左下角红色删除按钮
+3. 更多内容请参考:<a href="https://www.azimiao.com" target="_blank">梓喵出没博客</a>`,
                 })
             });
             return lastId;
@@ -63,8 +61,8 @@ let MarkerList = observable(
                         this.data[i].icon = newLayerObj.icon;
                         this.data[i].title = newLayerObj.title;
                         this.data[i].content = newLayerObj.content;
-                        this.data[i].contentRaw = newLayerObj.contentRaw ?? null;
                         this.data[i].iconSize = newLayerObj.iconSize ?? null;
+                        this.data[i].url = newLayerObj.url ?? null;
                         result = true;
                         break;
                     }
@@ -74,4 +72,4 @@ let MarkerList = observable(
         }
     });
 
-export default MarkerList;
+export default MarkerDataHelper;

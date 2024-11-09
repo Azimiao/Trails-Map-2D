@@ -78,7 +78,7 @@ let LayerList = observable({
         {
             "id": 8,
             "key": "special",
-            "icon": "cave.png",
+            "icon": "special.png",
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
@@ -115,6 +115,33 @@ let LayerList = observable({
             "id": 4000,
             "key":"port",
             "icon": "port.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        },
+        {
+            "id": 5000,
+            "key":"bridge",
+            "icon": "bridge.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        },           
+        {
+            "id": 8000,
+            "key":"school",
+            "icon": "school.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true
+        },          
+        {
+            "id": 8500,
+            "key":"tower",
+            "icon": "tower.png",
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
