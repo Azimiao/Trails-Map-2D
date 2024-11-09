@@ -19,14 +19,52 @@ import StateCache from "../assets/StateCache";
 // import { useV2Sidebar } from "react-leaflet-v2-sidebar";
 import ViewMarker from "./Markers/ViewMarker";
 import MarkerEditor from "./MarkerEditor";
+import Queue from "@/utils/Queue";
+
+
+const queueItem = new Queue();
+
 
 let ViewMap = observer(function (props) {
-
 
     // LatLng(lat/纬度,lng/经度),横纬竖经
     let bounds = L.latLngBounds([L.latLng(0, 0), L.latLng(-128, 128)]);
     const hasFitBounds = useRef(false);
     
+    const PopupKeyUp = (e)=>{
+        queueItem.enqueue(e.key);
+        if(queueItem.count() > 3)
+        {
+            queueItem.dequeue();
+        }
+
+        if(queueItem.toSinglelineString().toLowerCase() == "auv"){
+            if(!StateCache.IsEditorMode){
+                console.log("enter editor mode");
+                let result = window.confirm("是否进入编辑模式?");
+                if(result){
+                    StateCache.SetEditorMode(true);
+                }else{
+
+                }
+            }else{
+                let result = window.confirm("是否退出编辑模式?");
+                if(result){
+                    StateCache.SetEditorMode(false);
+                }else{
+
+                }
+            }
+        }
+    }
+
+    useEffect(()=>{
+        document.addEventListener("keyup",PopupKeyUp,false);
+        return ()=>{
+            document.removeEventListener("keyup", PopupKeyUp, false)
+        }
+    });
+
     const FitBoundsOnce = ()=> {
         const map = useMap();
 
