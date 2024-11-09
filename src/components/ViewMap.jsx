@@ -30,54 +30,56 @@ let ViewMap = observer(function (props) {
     // LatLng(lat/纬度,lng/经度),横纬竖经
     let bounds = L.latLngBounds([L.latLng(0, 0), L.latLng(-128, 128)]);
     const hasFitBounds = useRef(false);
-    
-    const PopupKeyUp = (e)=>{
+
+    const PopupKeyUp = (e) => {
         queueItem.enqueue(e.key);
-        if(queueItem.count() > 3)
-        {
+        if (queueItem.count() > 3) {
             queueItem.dequeue();
         }
 
-        if(queueItem.toSinglelineString().toLowerCase() == "auv"){
-            if(!StateCache.IsEditorMode){
+        if (queueItem.toSinglelineString().toLowerCase() == "auv") {
+            if (!StateCache.IsEditorMode) {
                 console.log("enter editor mode");
                 let result = window.confirm("是否进入编辑模式?");
-                if(result){
+                if (result) {
                     StateCache.SetEditorMode(true);
-                }else{
+                } else {
 
                 }
-            }else{
-                let result = window.confirm("是否退出编辑模式?");
-                if(result){
-                    StateCache.SetEditorMode(false);
-                }else{
+            } else {
+                if (!StateCache.IsEditing) {
+                    let result = window.confirm("是否退出编辑模式?");
+                    if (result) {
+                        StateCache.SetEditorMode(false);
+                    } else {
 
+                    }
                 }
             }
         }
     }
 
-    useEffect(()=>{
-        document.addEventListener("keyup",PopupKeyUp,false);
-        return ()=>{
+    useEffect(() => {
+        document.addEventListener("keyup", PopupKeyUp, false);
+        return () => {
             document.removeEventListener("keyup", PopupKeyUp, false)
         }
     });
 
-    const FitBoundsOnce = ()=> {
+    const FitBoundsOnce = () => {
         const map = useMap();
 
-        useEffect(()=>{
+        useEffect(() => {
             if (!hasFitBounds.current) {
-            // 设置适当的边界
-            const bounds = L.latLngBounds(
-                [-40.1875,13.4375], // 南西角坐标
-                [-89.8125, 113.9375]   // 东北角坐标
-            );
-            map.fitBounds(bounds);
-            hasFitBounds.current = true; // 标记 fitBounds 已执行
-        }},[map]);
+                // 设置适当的边界
+                const bounds = L.latLngBounds(
+                    [-40.1875, 13.4375], // 南西角坐标
+                    [-89.8125, 113.9375]   // 东北角坐标
+                );
+                map.fitBounds(bounds);
+                hasFitBounds.current = true; // 标记 fitBounds 已执行
+            }
+        }, [map]);
 
         return null;
     }
@@ -85,9 +87,9 @@ let ViewMap = observer(function (props) {
     let markerRef1 = React.createRef();
 
     // pre load images
-    useEffect(()=>{
+    useEffect(() => {
         //FitBoundsMap();
-    },[]);
+    }, []);
     return (
         <React.Fragment>
             <MapContainer
@@ -115,10 +117,10 @@ let ViewMap = observer(function (props) {
 
                             return (
                                 <LayersControl.Overlay key={layerData.id} name={layerData.key} checked={true}>
-                                    <MarkerClusterGroup 
-                                    // SpiderfyOnMaxZoom={true} 
-                                    // disableClusteringAtZoom={3}
-                                    maxClusterRadius={50}
+                                    <MarkerClusterGroup
+                                        // SpiderfyOnMaxZoom={true} 
+                                        // disableClusteringAtZoom={3}
+                                        maxClusterRadius={50}
                                     >
 
                                         {
@@ -168,7 +170,7 @@ let lastClickPos = {
 const MapEvents = () => {
     useMapEvent({
         async click(e) {
-            if(!StateCache.IsEditorMode){
+            if (!StateCache.IsEditorMode) {
                 return;
             }
             console.log(e.latlng);
@@ -204,11 +206,11 @@ const OnDelClick = async function (id) {
     await MarkerDataHelper.RemoveMarker(id);
 }
 
-const OnSaveClick = function (id,newData) {
+const OnSaveClick = function (id, newData) {
     console.log(`save ${id}`);
     StateCache.SetIsEditing(false);
     console.log(newData);
-    MarkerDataHelper.UpdateMarker(id,newData);
+    MarkerDataHelper.UpdateMarker(id, newData);
 }
 
 const OnEditClick = function (id) {
@@ -217,9 +219,9 @@ const OnEditClick = function (id) {
     StateCache.SetIsEditing(true);
 }
 
-const OnExportAllClick = function(){
+const OnExportAllClick = function () {
     let jsonString = JSON.stringify(MarkerDataHelper.data);
-    const blob = new Blob([jsonString],{type:"application/json"});
+    const blob = new Blob([jsonString], { type: "application/json" });
 
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
