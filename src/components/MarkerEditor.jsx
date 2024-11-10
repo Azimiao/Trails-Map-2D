@@ -7,7 +7,7 @@ import { Component } from 'react';
 import { observer } from 'mobx-react';
 import ReactDropdown from 'react-dropdown';
 import "react-dropdown/style.css";
-import LayerList from '@/assets/LayerConfig';
+import LayerDataHelper from '@/assets/LayerDataHelper';
 import MarkerSize from '@/assets/MarkerSizeConfig';
 const prefix = 'leaflet-popup-button';
 
@@ -31,7 +31,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                 inputTitleValue: oldMarkerData.title,
                 layerId: oldMarkerData.layerId,
                 icon: oldMarkerData.icon ?? "",
-                iconSize: oldMarkerData.iconSize ?? LayerList.getLayerById(oldMarkerData.layerId).size,
+                iconSize: oldMarkerData.iconSize ?? LayerDataHelper.getLayerById(oldMarkerData.layerId).size,
                 inputUrlTitle: oldMarkerData.url?.title ?? "",
                 inputUrlValue : oldMarkerData.url?.value ??  "",
                 inputContentValue: oldMarkerData.content
@@ -83,7 +83,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
     }
 
     render() {
-        const layerOptions = LayerList.getOptionsList();
+        const layerOptions = LayerDataHelper.getOptionsList();
         const MarkerSizeOptions = MarkerSize.getOptionsList();
 
         return (

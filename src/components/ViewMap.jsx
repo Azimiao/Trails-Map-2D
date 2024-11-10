@@ -11,13 +11,14 @@ import { observer } from "mobx-react";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 import "@changey/react-leaflet-markercluster/dist/styles.min.css";
 
-import LayerList from "../assets/LayerConfig";
+import LayerDataHelper from "../assets/LayerDataHelper";
 import MarkerDataHelper from "../assets/MarkerDataHelper";
 import StateCache from "../assets/StateCache";
 
 import ViewMarker from "./Markers/ViewMarker";
 import MarkerEditor from "./MarkerEditor";
 import Queue from "@/utils/Queue";
+import ControlOverlay from "./ControlOverlay";
 
 
 
@@ -42,7 +43,7 @@ let ViewMap = observer(function (props) {
                 if (result) {
                     StateCache.Set3DMode(false);
                     StateCache.SetEditorMode(true);
-                } 
+                }
             } else {
                 if (!StateCache.IsEditing) {
                     let result = window.confirm("是否退出编辑模式?");
@@ -51,14 +52,13 @@ let ViewMap = observer(function (props) {
                     }
                 }
             }
-        }else if(!StateCache.IsEditorMode && queueItem.toSinglelineString().toLowerCase() == "njx")
-        {
-            let result = window.confirm(StateCache.is3D ? "是否退出3D模式?":"是否进入3D模式?");
-            if(result){
+        } else if (!StateCache.IsEditorMode && queueItem.toSinglelineString().toLowerCase() == "njx") {
+            let result = window.confirm(StateCache.is3D ? "是否退出3D模式?" : "是否进入3D模式?");
+            if (result) {
                 StateCache.Set3DMode(!StateCache.is3D);
             }
         }
-        
+
     }
 
     useEffect(() => {
@@ -87,11 +87,11 @@ let ViewMap = observer(function (props) {
     }
     const markerRef1 = React.createRef();
     return (
-        <div className={StateCache.is3D ? "test3d" :"test2d"} style={{
-            width:"100%",
-            height:"100%"
+        <div className={StateCache.is3D ? "test3d" : "test2d"} style={{
+            width: "100%",
+            height: "100%"
         }}>
-        
+
             <MapContainer
                 id="LiveMap"
                 center={L.latLng([-64, 64])}
@@ -111,42 +111,42 @@ let ViewMap = observer(function (props) {
 
                 </TileLayer>
                 <MapEvents />
-                <LayersControl>
-                    {
-                        LayerList.data.map((layerData, index) => {
+                {
+                    LayerDataHelper.data.map((layerData, index) => {
 
-                            return (
-                                <LayersControl.Overlay key={layerData.id} name={layerData.key} checked={true}>
-                                    <MarkerClusterGroup
-                                        // SpiderfyOnMaxZoom={true} 
-                                        // disableClusteringAtZoom={3}
-                                        maxClusterRadius={50}
-                                    >
+                        return (
+                            layerData.show ?
+                                // <LayersControl.Overlay key={layerData.id} name={layerData.key} checked={true}>
+                                <MarkerClusterGroup
+                                    // SpiderfyOnMaxZoom={true} 
+                                    // disableClusteringAtZoom={3}
+                                    key={layerData.id}
+                                    maxClusterRadius={50}
+                                >
+                                    {
+                                        MarkerDataHelper.GetDataListByLayer(layerData.id)?.map((originMarkData, index) => {
+                                            return (
+                                                <ViewMarker
+                                                    myRef={markerRef1}
+                                                    onEditClick={OnEditClick}
+                                                    onDelClick={OnDelClick}
+                                                    onExportAllClick={OnExportAllClick}
+                                                    markerData={originMarkData}>
+                                                </ViewMarker>
+                                            )
+                                        })
+                                    }
 
-                                        {
-                                            MarkerDataHelper.GetDataListByLayer(layerData.id)?.map((originMarkData, index) => {
-                                                return (
-                                                    <ViewMarker
-                                                        myRef={markerRef1}
-                                                        onEditClick={OnEditClick}
-                                                        onDelClick={OnDelClick}
-                                                        onExportAllClick={OnExportAllClick}
-                                                        markerData={originMarkData}>
-                                                    </ViewMarker>
-                                                )
-                                            })
-                                        }
+                                </MarkerClusterGroup> : null
+                            // </LayersControl.Overlay>
+                        )
 
-                                    </MarkerClusterGroup>
-                                </LayersControl.Overlay>
-                            )
+                    })
+                }
 
-                        })
-                    }
-                </LayersControl>
-
-                <FitBoundsOnce/>
+                <FitBoundsOnce />
             </MapContainer>
+            <ControlOverlay></ControlOverlay>
             {StateCache.IsEditorMode && StateCache.IsEditing ?
                 <div id={"MapEditor"}>
                     <MarkerEditor

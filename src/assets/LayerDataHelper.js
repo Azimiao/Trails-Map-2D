@@ -1,7 +1,7 @@
 import { observable } from "mobx";
 
 //fixed
-let LayerList = observable({
+let LayerDataHelper = observable({
     "data": [
         {
             "id": 0,
@@ -11,6 +11,7 @@ let LayerList = observable({
             "showTitle": true,
             "zIndexOffset":999999,
             "autoGroup": false,
+            "show": true,
         },
         {
             "id": 1,
@@ -19,7 +20,8 @@ let LayerList = observable({
             "size":"XXL",
             "showTitle": false,
             "zIndexOffset":55555,
-            "autoGroup": false
+            "autoGroup": false,
+            "show": true
         },
         {
             "id": 2,
@@ -28,7 +30,8 @@ let LayerList = observable({
             "size": "XL",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": false
+            "autoGroup": false,
+            "show": true
         },
         {
             "id": 3,
@@ -37,7 +40,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 4,
@@ -46,7 +50,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 5,
@@ -55,7 +60,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 6,
@@ -64,7 +70,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 7,
@@ -73,7 +80,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 8,
@@ -82,7 +90,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 1000,
@@ -91,7 +100,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 2000,
@@ -100,7 +110,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 3000,
@@ -109,7 +120,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 4000,
@@ -118,7 +130,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },
         {
             "id": 5000,
@@ -127,7 +140,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },           
         {
             "id": 8000,
@@ -136,7 +150,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         },          
         {
             "id": 8500,
@@ -145,7 +160,8 @@ let LayerList = observable({
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
-            "autoGroup": true
+            "autoGroup": true,
+            "show": true
         }
     ],
     getAllLayerKey() {
@@ -188,4 +204,4 @@ let LayerList = observable({
     }
 });
 
-export default LayerList;
+export default LayerDataHelper;

@@ -2,7 +2,7 @@ import React from 'react'
 import { Marker, Tooltip } from 'react-leaflet'
 import L from "leaflet";
 import ViewPopup from "./ViewPopup"
-import LayerList from '@/assets/LayerConfig';
+import LayerDataHelper from '@/assets/LayerDataHelper';
 import MarkerSize from '@/assets/MarkerSizeConfig';
 /**
  * 标注点
@@ -25,7 +25,7 @@ const ViewMarker = (props) => {
 
     }
 
-    const layer = LayerList.getLayerById(props.markerData.layerId);
+    const layer = LayerDataHelper.getLayerById(props.markerData.layerId);
     const size = MarkerSize.GetSize(props.markerData.iconSize ?? layer.size);
     const iconUrl = getIcon(layer, props.markerData);
 
