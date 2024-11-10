@@ -2,11 +2,11 @@ import React from "react";
 import { Popup } from "react-leaflet";
 import L from "leaflet";
 import Parser from 'html-react-parser';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import StateCache from "@/assets/StateCache";
 
 import { Viewer as ByteMDViewer } from "@bytemd/react";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@material-ui/styles";
 
 
 const useStyles = makeStyles((theme)=>({

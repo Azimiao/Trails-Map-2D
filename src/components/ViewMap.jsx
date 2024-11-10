@@ -4,8 +4,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-sidebar-v2/css/leaflet-sidebar.css";
 import "fontawesome-free/css/all.css";
 import "../assets/css/LiveMap.css";
-//TODO: use colorful marker image
-import marker from "leaflet/dist/images/marker-icon.png";
+
 import React, { useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react";
 
@@ -16,10 +15,10 @@ import LayerList from "../assets/LayerConfig";
 import MarkerDataHelper from "../assets/MarkerDataHelper";
 import StateCache from "../assets/StateCache";
 
-// import { useV2Sidebar } from "react-leaflet-v2-sidebar";
 import ViewMarker from "./Markers/ViewMarker";
 import MarkerEditor from "./MarkerEditor";
 import Queue from "@/utils/Queue";
+
 
 
 const queueItem = new Queue();
@@ -92,6 +91,7 @@ let ViewMap = observer(function (props) {
             width:"100%",
             height:"100%"
         }}>
+        
             <MapContainer
                 id="LiveMap"
                 center={L.latLng([-64, 64])}
@@ -145,8 +145,7 @@ let ViewMap = observer(function (props) {
                     }
                 </LayersControl>
 
-                <FitBoundsOnce></FitBoundsOnce>
-                {/* <Sidebar /> */}
+                <FitBoundsOnce/>
             </MapContainer>
             {StateCache.IsEditorMode && StateCache.IsEditing ?
                 <div id={"MapEditor"}>
@@ -230,35 +229,5 @@ const OnExportAllClick = function () {
     link.click();
     URL.revokeObjectURL(link.href);
 }
-
-// function Sidebar() {
-//     const map = useMap();
-//     const panels = [
-//       {
-//         id: "userInfo",
-//         tab: '<i style="font-size: large" class="fa fa-user"></i>',
-//         pane: "User Info Tab Content",
-//         title: "Your Profile",
-//         position: "top",
-//       },
-//       {
-//         id: "settings",
-//         tab: '<i style="font-size: large" class="fa fa-cogs"></i>',
-//         pane: "Settings Tab Content",
-//         title: "Settings Tab",
-//         position: "top",
-//       },
-//       {
-//         id: "github",
-//         tab: '<i style="font-size: large" class="fa fa-archive"></i>',
-//         pane: "Github Tab Content",
-//         title: "Github Info",
-//         position: "bottom",
-//       },
-//     ];
-//     useV2Sidebar(map, panels);
-
-//     return <React.Fragment></React.Fragment>;
-//   }
 
 export default ViewMap;
