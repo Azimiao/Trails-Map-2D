@@ -78,6 +78,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
     }
 
     OnIconChanged = (evt) => {
+        console.log(evt.target.value);
         this.setState({ icon: evt.target.value });
     }
 
@@ -91,7 +92,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                 <h3>标题</h3>
                 <input // 标题栏编辑
                     className="marker-editor-input"
-                    defaultValue={this.state.inputTitleValue}
+                    value={this.state.inputTitleValue}
                     onChange={this.OnTitleChanged}
                 />
                 <h3>外部链接配置</h3>
@@ -101,13 +102,13 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                     <input
                         className='marker-editor-input'
                         onChange={this.OnInputUrlTitleChanged}
-                        defaultValue={this.state.inputUrlTitle}
+                        value={this.state.inputUrlTitle}
                     />
                     <h5>链接</h5>
                     <input
                         className='marker-editor-input'
                         onChange={this.OnInputUrlValueChanged}
-                        defaultValue={this.state.inputUrlValue}
+                        value={this.state.inputUrlValue}
                     />
                 </details>
                 <div className={"dropdown-container"}> 
@@ -129,7 +130,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                 <input
                     className='marker-editor-input'
                     onChange={this.OnIconChanged}
-                    defaultValue={this.state.icon}
+                    value={this.state.icon}
                 />
                 <p></p>
                 <ByteMDEditor

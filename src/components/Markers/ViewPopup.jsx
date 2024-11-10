@@ -3,7 +3,6 @@ import { Popup } from "react-leaflet";
 import L from "leaflet";
 import Parser from 'html-react-parser';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import "@/assets/css/Popup/ViewPopup.css";
 import StateCache from "@/assets/StateCache";
 
 import { Viewer as ByteMDViewer } from "@bytemd/react";

@@ -4,8 +4,8 @@ const MarkerSize = {
         "XXL": [56, 56],
         "XL": [40, 40],
         "L": [32, 32],
-        "M": [32, 32],
-        "S": [32, 32]
+        "M": [28, 28],
+        "S": [16, 16]
     },
     GetDefaultSize(){
         return "L";

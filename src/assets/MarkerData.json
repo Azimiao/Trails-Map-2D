@@ -1,21 +1,5 @@
 [
     {
-        "id": 6,
-        "layerId": 0,
-        "position": [
-            -62.1015625,
-            55.3046875
-        ],
-        "icon": "https://trails-game.com/wp-content/uploads/2020/06/crossbell.png",
-        "title": "克洛斯贝尔",
-        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/pres8111-1024x576.webp)\n\n位于塞姆利亚大陆西部的自治州。由于夹在埃雷波尼亚和卡尔瓦德这两大国的中间，自中世纪时代以来均是激烈领土纷争的对象，但在70年前视双方为宗主国，开创成为自治州。\n\n之后，州中心的克洛斯贝尔市已经发展成大陆屈指可数的巨大贸易都市，成为帝国和共和国间铁道和国际定期飞行船的中转站，近年更发展成国际性的金融都市。\n\n投入银行资本后，也实验性引进主题乐园等观光产业及导力网络等基础建设。但是必须缴纳庞大税金给帝国与共和国，由于没有国家主权，因此也产生各种矛盾与事件。此处沦为两大国之间争夺领土的标的，长年上演著剧烈的领土争夺战。甚至曾有一段时间沦为帝国境内的克洛斯贝尔州。\n\n如今已克服俗称「再次事变」的难关，奉亚尔特利亚法典国为宗主国，得以用自治州的形式再次独立。",
-        "iconSize": "XXL",
-        "url": {
-            "title": "Cafe-克洛斯贝尔",
-            "value": "https://trails-game.com/region/crossbell/"
-        }
-    },
-    {
         "id": 7,
         "layerId": 0,
         "position": [
@@ -65,7 +49,7 @@
     },
     {
         "id": 10,
-        "layerId": 1,
+        "layerId": 7,
         "position": [
             -52.2109375,
             52.2890625
@@ -144,8 +128,12 @@
         ],
         "icon": "https://trails-game.com/wp-content/uploads/2022/02/エルザイム公国.png",
         "title": " 艾尔萨姆公国",
-        "content": "<p>大陆中东部的国家，临近卡尔瓦德西南部的萨尔巴德，因此公王家长期对萨尔巴德及其电影产业进行投资。其《鲁德斯开发银行》长期象征「中东财富」。与都市国家《瓦利斯市国》被称为中东双壁。</p>",
-        "iconSize": "XXL"
+        "content": "大陆中东部的国家，临近卡尔瓦德西南部的萨尔巴德，因此公王家长期对萨尔巴德及其电影产业进行投资。其《鲁德斯开发银行》长期象征「中东财富」。与都市国家《瓦利斯市国》被称为中东双壁。",
+        "iconSize": "XXL",
+        "url": {
+            "title": "Cafe- 艾尔萨姆公国",
+            "value": "https://trails-game.com/region/elsaim/"
+        }
     },
     {
         "id": 16,
@@ -172,8 +160,12 @@
         ],
         "icon": "",
         "title": "龙来瀑布",
-        "content": "<p>龙来瀑布</p>",
-        "iconSize": "L"
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
     },
     {
         "id": 18,
@@ -196,7 +188,7 @@
         ],
         "icon": "",
         "title": " 伊帝斯",
-        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/Edith.webp)\n\n卡尔瓦德共和国的首都，同时也是大陆上规模最大的巨大都市，人口80万。\n\n城中有著建于90年前的总统府、面对共和国议会的革命广场、菁英校友辈出的名门高中、出版社和导力影片馆林立的地区、跟不上开发脚步的旧市街，以及面对河畔的商业地区等，在大街上还有著白色的丁香行道树。\n\n由于是大陆上首屈一指的导力车大国，不仅街头的车款相当多样化，也较其他国家率先引进交通号志。同时也是大陆上首座以“地下铁”来取代路面电车，联络城中主要地区的都市。",
+        "content": "![](https://trails-game.com/wp-content/uploads/2022/02/伊帝斯8区.png)\n\n卡尔瓦德共和国的首都，同时也是大陆上规模最大的巨大都市，人口80万。\n\n城中有著建于90年前的总统府、面对共和国议会的革命广场、菁英校友辈出的名门高中、出版社和导力影片馆林立的地区、跟不上开发脚步的旧市街，以及面对河畔的商业地区等，在大街上还有著白色的丁香行道树。\n\n由于是大陆上首屈一指的导力车大国，不仅街头的车款相当多样化，也较其他国家率先引进交通号志。同时也是大陆上首座以“地下铁”来取代路面电车，联络城中主要地区的都市。",
         "iconSize": "XL",
         "url": {
             "title": " Cafe-伊帝斯",
@@ -236,8 +228,12 @@
         ],
         "icon": "",
         "title": "贝尔加德门",
-        "content": "",
-        "iconSize": "L"
+        "content": "位于克洛斯贝尔西部，连结埃雷波尼亚帝国的重要关口，对面则是帝国的重要军事设施——加雷利亚要塞。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-贝尔加德门",
+            "value": "https://trails-game.com/region/bellguard/"
+        }
     },
     {
         "id": 23,
@@ -248,20 +244,12 @@
         ],
         "icon": "",
         "title": "加雷利亚要塞",
-        "content": "",
-        "iconSize": "L"
-    },
-    {
-        "id": 24,
-        "layerId": 2,
-        "position": [
-            -62.65625,
-            55.6796875
-        ],
-        "icon": "",
-        "title": "米修拉姆",
-        "content": "艾鲁姆湖对岸年代久远的疗养地，是贵族和资产家的别墅所在地。\n\n近几年由于IBC（克洛斯贝尔国际银行）的支持，开发进程快速，建成了度假酒店、高级商店以及大规模的主题公园，作为新的观光宝地而引人注目。从克洛斯贝尔的港湾区乘坐水上巴士即可到达。",
-        "iconSize": "L"
+        "content": "位于埃雷波尼亚帝国东部边境，紧邻克洛斯贝尔自治州的大型军事要塞，配有两部列车炮，其射程，射速及威力足以在数小时内将克洛斯贝尔市夷为平地。驻守于此的为瓦特尔中将率领的第五机甲师团。\n\n![](https://trails-game.com/wp-content/uploads/2023/04/garrelia-fortress-crossbell-side-768x566.webp)\n\n在七耀历1204年10月24日16时21分，加雷利亚要塞被零之至宝加强后的神机Type-α毁灭。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-加雷利亚要塞",
+            "value": "https://trails-game.com/region/garrelia/"
+        }
     },
     {
         "id": 25,
@@ -272,20 +260,12 @@
         ],
         "icon": "",
         "title": " 阿尔摩利卡村",
-        "content": "<p>坐落在克洛斯贝尔东北的，以农业、畜牧业、养蜂业为主的村落。</p>\n<p>拥有丰富的水源、广阔的花田、以及中世纪的古道等美景，最近有疲于都市喧嚣的市民和一些观光客造访，村落逐渐振兴起来。从克洛斯贝尔市乘坐导力巴士即可到达，大约每2小时有一趟。</p>",
-        "iconSize": "L"
-    },
-    {
-        "id": 26,
-        "layerId": 1000,
-        "position": [
-            -61.21875,
-            54.2734375
-        ],
-        "icon": "",
-        "title": " 玛因兹矿山镇",
-        "content": "<p>位于克洛斯贝尔西北部的山岳地带，采掘七耀石的矿山城镇。<br>\n原本克洛斯贝尔就是以优质七耀石产地而闻名，由于近年来贸易金融方面也名声远扬，相对来说对矿业的注目程度就下降了。但是产量没有减少，也有很多直接来购买的外商。</p>",
-        "iconSize": "L"
+        "content": "![](https://cdn.trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/armorica.png.webp)\n\n坐落在克洛斯贝尔东北的，以农业、畜牧业、养蜂业为主的村落。\n\n拥有丰富的水源、广阔的花田、以及中世纪的古道等美景，最近有疲于都市喧嚣的市民和一些观光客造访，村落逐渐振兴起来。从克洛斯贝尔市乘坐导力巴士即可到达，大约每2小时有一趟。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe- 阿尔摩利卡村",
+            "value": "https://trails-game.com/region/armorica/"
+        }
     },
     {
         "id": 27,
@@ -296,8 +276,12 @@
         ],
         "icon": "",
         "title": "唐古拉姆门",
-        "content": "",
-        "iconSize": "L"
+        "content": "位于克洛斯贝尔东侧、唐古拉姆丘陵的大门，是克洛斯贝尔与卡尔瓦德共和国间的交通要道。帝国占领时期，为了迎接巨硕黄昏，唐古拉姆门被大规模改造。在克洛斯贝尔再次独立之后，改造逐渐被拆除。 ",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-唐古拉姆门",
+            "value": "https://trails-game.com/region/tangram/"
+        }
     },
     {
         "id": 28,
@@ -377,7 +361,7 @@
         "icon": "",
         "title": "安科维尔市",
         "content": "![](https://cdn.trails-game.com/wp-content/uploads/2024/07/anchorville.webp)\n\n\n位于卡尔瓦德共和国首都伊帝斯与古都奥拉希翁正中间的地方城市。 作为连接这两个城市的中继城市而繁荣发展，许多大企业的分店和分公司也相继进驻。 虽然没有显著的特征，但以其平静的氛围和宜居的环境，赢得了共和国市民的一定好评。",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-安科维尔市",
             "value": "https://trails-game.com/region/%e5%ae%89%e5%8d%a1%e7%bb%b4%e5%b0%94/"
@@ -420,8 +404,8 @@
         ],
         "icon": "",
         "title": "萨尔巴德",
-        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/tharbad2-1024x575.webp)\n\n位于卡尔瓦德东南部希林沙漠中，坐落在绿洲湖畔。是一座传统与革新相融的游乐都市。其中的传统地区有着浓厚的中东风情，随处可见的骆驼是当地象征性的代步工具。维加斯影业的总部也设立于此，也是萨尔巴德影展的举办地。 \n\n![](https://cdn.trails-game.com/wp-content/uploads/2023/03/tharbad1.webp)",
-        "iconSize": "XL",
+        "content": "位于卡尔瓦德东南部希林沙漠中，坐落在绿洲湖畔。是一座传统与革新相融的游乐都市。其中的传统地区有着浓厚的中东风情，随处可见的骆驼是当地象征性的代步工具。维加斯影业的总部也设立于此，也是萨尔巴德影展的举办地。 \n\n![](https://cdn.trails-game.com/wp-content/uploads/2023/03/tharbad2-1024x575.webp)\n\n![](https://cdn.trails-game.com/wp-content/uploads/2023/03/tharbad1.webp)",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-萨尔巴德",
             "value": "https://trails-game.com/region/tharbad/"
@@ -449,7 +433,11 @@
         "icon": "",
         "title": "迪琼市",
         "content": "",
-        "iconSize": "XL"
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
     },
     {
         "id": 39,
@@ -461,7 +449,7 @@
         "icon": "",
         "title": "兰波特",
         "content": "![](https://cdn.trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/01/cal-w2102-m-1024x640.jpg.webp)\n\n位于卡尔瓦德共和国南部的巨大海港都市，别称《煌都》，拥有共和国第二大的人口规模，人口55万。\n\n拥有最大规模的东方人街，汇聚了各种文化、人种和物资来往，被誉为『东西方文化的交汇点』。异国情调的建筑鳞次栉比，是著名的观光胜地。庞大的黑手党组织「黑月」的总部也在此处。 ",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-兰波特",
             "value": "https://trails-game.com/region/lanport/"
@@ -477,7 +465,7 @@
         "icon": "",
         "title": "巴泽尔",
         "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/basel1.webp)\n\n卡尔瓦德西南部欧茱峡谷中的学术工业都市，拥有18万的人口。\n\n都市分成从中世纪延续至今的工匠街，拥有天文台的巴泽尔理科大学，以及乌尔努为中心的新市街。导力缆车连结了因地形原因而有着高低落差的街区。\n\n卡尔瓦德不仅有着美丽的风景，也在学术工业城市化上不断取得进展。",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-巴泽尔",
             "value": "https://trails-game.com/region/basel/"
@@ -493,7 +481,11 @@
         "icon": "",
         "title": "马尔特市",
         "content": "",
-        "iconSize": "XL"
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
     },
     {
         "id": 42,
@@ -503,9 +495,13 @@
             56.6171875
         ],
         "icon": "",
-        "title": "阿尔泰市",
-        "content": "",
-        "iconSize": "XL"
+        "title": " 阿勒泰尔市",
+        "content": "\n卡尔瓦德西部，靠近克洛斯贝尔的边境城市。通过大陆横断铁路，只需一个小时即可到达克洛斯贝尔。郊外有曾经的D∴G教团遗址。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe- 阿勒泰尔市",
+            "value": "https://trails-game.com/region/altair/"
+        }
     },
     {
         "id": 43,
@@ -529,7 +525,7 @@
         "icon": "",
         "title": "亚尔特利亚法典国",
         "content": "![](https://cdn.trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/Arteria-1024x514.png.webp)\n\n七耀教会总部所在的都市国家。位于塞姆利亚大陆中部，来自大陆全境的众多信徒与宗教人士云集于此，是著名的宗教圣地。 下设监督各种祭祀仪式的『典礼省』、管理女神的圣礼的『封圣省』、负责都市防卫的『僧兵厅』等各类组织。 ",
-        "iconSize": "XL",
+        "iconSize": "M",
         "url": {
             "title": "Cafe-亚尔特利亚法典国",
             "value": "https://trails-game.com/region/arteria/"
@@ -557,7 +553,7 @@
         "icon": "",
         "title": "奥拉西翁",
         "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/oracion-1024x575.webp)\n\n位于卡尔瓦德东北部的旧王都。是卡尔瓦德历史最悠久，也是第三大的都市，人口28万。地下有着复杂的遗迹，与王国时期的瓦修塔尔宫相连。 ",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-奥拉希翁",
             "value": "https://trails-game.com/region/oracion/"
@@ -573,7 +569,11 @@
         "icon": "",
         "title": "波梅市",
         "content": "",
-        "iconSize": "XL"
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
     },
     {
         "id": 49,
@@ -584,8 +584,12 @@
         ],
         "icon": "",
         "title": "奥洛克斯堡垒",
-        "content": "",
-        "iconSize": "L"
+        "content": "![](https://trails-game.com/wp-content/uploads/2023/03/Aurochs_Fort-1024x505.webp)\n\n位于克鲁琴州奥洛克斯峡谷中的古老堡垒，由艾尔巴雷亚家管理。原先为克鲁琴州领邦军的驻扎地，连接货运铁路网，在内战中被大规模整修改造为要塞，之后主要为关押卫士队的监狱。 ",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-奥洛克斯堡垒",
+            "value": "https://trails-game.com/region/aurochs/"
+        }
     },
     {
         "id": 50,
@@ -609,7 +613,11 @@
         "icon": "",
         "title": "列曼自治州",
         "content": "",
-        "iconSize": "XL"
+        "iconSize": "M",
+        "url": {
+            "title": "",
+            "value": ""
+        }
     },
     {
         "id": 52,
@@ -621,7 +629,11 @@
         "icon": "",
         "title": "边境？",
         "content": "",
-        "iconSize": "XL"
+        "iconSize": "M",
+        "url": {
+            "title": "",
+            "value": ""
+        }
     },
     {
         "id": 53,
@@ -648,8 +660,12 @@
         ],
         "icon": "",
         "title": "哈利亚斯克",
-        "content": "",
-        "iconSize": "L"
+        "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/03/haliask.jpg.webp)\n\n诺森比亚的首都，北方猎兵的大本营。七耀历1178年7月1日，哈利亚斯克的郊外出现盐之桩，导致诺森比亚大片领土盐化，诺森比亚大公国也就此灭亡，成为由北方猎兵统治的自治州。 ",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-哈利亚斯克",
+            "value": "https://trails-game.com/region/haliask/"
+        }
     },
     {
         "id": 55,
@@ -660,7 +676,7 @@
         ],
         "icon": "",
         "title": "诺桑比亚州",
-        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/pres8112-1024x576.webp)\n\n位处塞姆利亚大陆西北部，气候严寒的自治州。\n\n原为大公国，但在二十几年前，突然发生大灾难，国土大半被盐所覆盖，随后发生政变，成为议会制的自治州。但是大规模的盐害使得贫困的状态难以改善，于是前公国正规军便组成了大型猎兵团《北方猎兵》——借由介入大陆各地的纷争，在他人的雇用下大显身手，为自治州带来庞大的外汇收入。《北方战役》结束后虽一度成为帝国的属州，目前已再次以自治州的形式独立。 ",
+        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/pres8112-1024x576.webp)\n\n位处塞姆利亚大陆西北部，气候严寒的自治州。\n\n原为大公国，但在二十几年前，突然发生大灾难，国土大半被盐所覆盖，随后发生政变，成为议会制的自治州。但是大规模的盐害使得贫困的状态难以改善，于是前公国正规军便组成了大型猎兵团《北方猎兵》——借由介入大陆各地的纷争，在他人的雇用下大显身手，为自治州带来庞大的外汇收入。\n\n《北方战役》结束后虽一度成为帝国的属州，目前已再次以自治州的形式独立。 ",
         "iconSize": "XL",
         "url": {
             "title": "Cafe-诺森比亚",
@@ -677,7 +693,11 @@
         "icon": "",
         "title": "自由都市圈",
         "content": "",
-        "iconSize": "XL"
+        "iconSize": "M",
+        "url": {
+            "title": "",
+            "value": ""
+        }
     },
     {
         "id": 57,
@@ -741,7 +761,7 @@
         "icon": "",
         "title": "卢安",
         "content": "![](https://trails-game.com/wp-content/uploads/2023/03/ruan-1024x679.webp)\n\n位于利贝尔西部，面向亚瑟利亚湾入口的海港都市。 过去通过船只运输的水运业非常繁荣，但是被通过飞行船运输的空运业压制，每年的卸货量都在减少。 海岸并排坐落着一户户的白瓦房，近年来渐渐地利用那些美丽的景色开始发展旅游业。\n\n在宽大的街道正中间有横跨卢碧努川的名为「伦格兰德大桥」的开合桥,每天的特定时间可以上桥。 \n\n\n",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-卢安",
             "value": "https://trails-game.com/region/ruan/"
@@ -769,7 +789,7 @@
         "icon": "",
         "title": "蔡斯",
         "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/zeiss2.png.webp)\n\n利贝尔导力器产业的中心城市。 街道地下是广阔的导力器工场，制造从照明灯到飞行船配件等各种各样的物品。 蔡斯的导力器技术在整片大陆也是顶级水平，也因此经常与他国发生争端。 \n\n在街道中心有着名为中央工房的设施，工房长同时也担任着市长的职位。\n\n",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-蔡斯",
             "value": "https://trails-game.com/region/zeiss/"
@@ -857,7 +877,7 @@
         "icon": "",
         "title": "洛连特",
         "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/rolent2.png.webp)\n\n位于利贝尔东北部的地方都市。 主要的产业为农业和七耀石的采掘。在北部的玛鲁加矿山可以采掘到七耀石中的一种——翠耀石。 \n\n作为街道象征的钟塔，虽然在百日战争期间被破坏了，但之后已由市民们重建。艾丝蒂尔她们所住的布莱特家就位于洛连特西南街道的尽头。",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-洛连特",
             "value": "https://trails-game.com/region/rolent/"
@@ -921,7 +941,7 @@
         "icon": "",
         "title": "柏斯",
         "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/bose2.png.webp)\n\n商业盛行的充满活力的利贝尔第二都市。 和埃雷波尼亚帝国也有贸易往来，有很多的物资和旅行者经过北部的哈肯大门来到这里。\n\n街道中央有着名为柏斯市场的巨大屋内市场，食品、服装、杂货、家具和书籍等形形色色的商品都可以在这里找到。",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe-柏斯",
             "value": "https://trails-game.com/region/bose/"
@@ -1060,8 +1080,12 @@
         ],
         "icon": "",
         "title": "古战场",
-        "content": "",
-        "iconSize": "L"
+        "content": "位于克洛斯贝尔州东侧，阿尔摩利卡村附近的古战场。深处的太阳堡垒曾是D∴G教团的据点。 ",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-古战场",
+            "value": "https://trails-game.com/region/ancient-battlefield/"
+        }
     },
     {
         "id": 88,
@@ -1073,10 +1097,458 @@
         "icon": "",
         "title": "梅瑟达姆",
         "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/Messeldam_kuro2_area-1024x714.webp)\n\n位于卡尔瓦德北部，面临北海的中等规模港湾都市。 既为北海贸易的要衝，自古以来也是供应王都奥拉希翁新鲜海产的重要渔业地带，但如今随著飞行船技术的发达而逐渐走下坡。然而即便如此，此处仍是通往雷米菲利亚等地的玄关，位置相当重要。 有别于南部的兰波特，此地没有东方人街，保留著王国时代街景的港湾地区甚至有著作为历史文化街区的价值，颇受欢迎。 就地理位置而言，此地较少与东方文化与中东文化接触，但从以前就盛行颠覆传统的前卫艺术，在「导力影展」于1208年起移师萨尔巴德前，每年皆是在梅瑟达姆举办。 ",
-        "iconSize": "XL",
+        "iconSize": "L",
         "url": {
             "title": "Cafe- 梅瑟达姆",
             "value": "https://trails-game.com/region/messeldam/"
+        }
+    },
+    {
+        "id": 89,
+        "layerId": 7,
+        "position": [
+            -70.40625,
+            63.640625
+        ],
+        "icon": "",
+        "title": "奎鲁德平原",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 90,
+        "layerId": 7,
+        "position": [
+            -68.640625,
+            67.71875
+        ],
+        "icon": "",
+        "title": "坎迪纳台地",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 91,
+        "layerId": 7,
+        "position": [
+            -61.890625,
+            72.046875
+        ],
+        "icon": "",
+        "title": "阿尔多拉高地",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 92,
+        "layerId": 7,
+        "position": [
+            -64.265625,
+            34.6484375
+        ],
+        "icon": "",
+        "title": "伊斯米亚大森林",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 93,
+        "layerId": 1000,
+        "position": [
+            -63.7265625,
+            37.140625
+        ],
+        "icon": "",
+        "title": "霭灵之里",
+        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/elin-1024x725.webp)\n\n由罗赛莉亚掌管的「魔女眷属」的隐秘村落，是养育艾玛和克洛提德的故乡。 拥有广阔的如朦胧幻想乡的风景，在村落附近有着为魔女举行特别仪式所用的设施。 似乎是位于帝国西南部的伊斯特米亚大森林中，但是没有作为魔女的特性的人无法察觉到村落的存在。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-霭灵",
+            "value": "https://trails-game.com/region/elin/"
+        }
+    },
+    {
+        "id": 94,
+        "layerId": 2,
+        "position": [
+            -65.7421875,
+            38.921875
+        ],
+        "icon": "https://trails-game.com/wp-content/uploads/2020/06/hyarms.png",
+        "title": "圣特亚克",
+        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/pres8116-1024x576.webp)\n\n帝国南部沙萨兰特州的州都，四大名门的海恩斯侯爵治理的都市。拥有仅次于帝都的历史，由于以大理石为基调的旧街景且过去的皇帝曾迁都于此，而有「白垩旧都」的称呼。 ",
+        "iconSize": "XXL",
+        "url": {
+            "title": "Cafe-圣特亚克",
+            "value": "https://trails-game.com/region/SaintArk/"
+        }
+    },
+    {
+        "id": 95,
+        "layerId": 3,
+        "position": [
+            -64.2890625,
+            40.0234375
+        ],
+        "icon": "",
+        "title": "多雷诺尔要塞",
+        "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/dreknor.png.webp)\n\n位于沙萨兰特州中部的军事要塞，与被毁灭前的加雷利亚要塞并列为帝国最大的要塞，是帝国西部的军事重地。七耀历1203年导力停止现象时，第三机甲师团赛克斯中将受命率蒸汽机甲师团由此出发进攻利贝尔。之后由于赛克斯与奥斯本宰相不和，被调任。现由奥拉夫·克雷格中将率领的第四机甲师团驻守。 ",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-多雷诺尔要塞",
+            "value": "https://trails-game.com/region/dreknor/"
+        }
+    },
+    {
+        "id": 96,
+        "layerId": 2,
+        "position": [
+            -61.28125,
+            43.2890625
+        ],
+        "icon": "",
+        "title": "海姆达尔",
+        "content": "![](https://trails-game.com/wp-content/uploads/2023/03/pres8113-1024x576.webp)\n\n埃雷波尼亚帝国的首都，拥有将近千年历史，大陆最古老的都市之一。人口超过80万人，在大陆西部堪称最大规模。有着以绯红砖头为基调的美丽街景，也有许多历史性的建筑物──也被称为「绯红帝都」。 \n\n在近年导力化的影响下，除了铺设在帝国全境的铁路网会汇集到帝都外，市街也有导力轨道车（路面铁路）通过，自家用导力车也开始逐渐增加。 北侧有皇帝的城堡与帝国政府的办公处——壮丽的《巴尔弗莱姆宫》，彰显帝国的巨大。 ",
+        "iconSize": "XL",
+        "url": {
+            "title": "Cafe-海姆达尔",
+            "value": "https://trails-game.com/region/Heimdallr/"
+        }
+    },
+    {
+        "id": 97,
+        "layerId": 2,
+        "position": [
+            -61.625,
+            45.078125
+        ],
+        "icon": "",
+        "title": "托利斯塔",
+        "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/trista.jpg.webp)\n\n位于帝都东部，乘坐大陆横断铁路20分钟左右就可以抵达的近郊都市。不仅拥有浓郁的历史文化传承，更是安居乐俗的人文乐土。 城镇北部是230年前，由被称为帝国中兴之祖的狮子皇帝德莱凯尔斯所设立，历史悠久的军官学校——托尔兹士官学院，学院原本是学习火药式枪械及大炮等近代战术的正统军事学校，如今保留形式，变成了贵族或平民出身的优秀人才投考的名门高等学校。 除此之外，小镇内还有转为导力电台广播组——托利斯塔电台而设立的建筑。 ",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-托利斯塔",
+            "value": "https://trails-game.com/region/Trista/"
+        }
+    },
+    {
+        "id": 98,
+        "layerId": 2,
+        "position": [
+            -62.0078125,
+            47.984375
+        ],
+        "icon": "",
+        "title": "凯尔迪克",
+        "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/celdic.jpg.webp)\n\n位于广袤的谷仓地带中心、各类交易繁荣的城镇。作为大陆横断铁路的中继站，每周都会开放大型的市集活动。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-凯尔迪克",
+            "value": "https://trails-game.com/region/Celdic/"
+        }
+    },
+    {
+        "id": 99,
+        "layerId": 7,
+        "position": [
+            -61.1953125,
+            47.515625
+        ],
+        "icon": "",
+        "title": "露纳利亚自然公园",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 100,
+        "layerId": 5000,
+        "position": [
+            -62.21875,
+            50.59375
+        ],
+        "icon": "",
+        "title": "双龙桥",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 101,
+        "layerId": 2,
+        "position": [
+            -64.5234375,
+            48.4375
+        ],
+        "icon": "https://trails-game.com/wp-content/uploads/2020/06/albarea.png",
+        "title": "巴利亚哈特",
+        "content": "![](https://trails-game.com/wp-content/uploads/2023/03/pres8114-1024x576.webp)\n\n帝国东部克鲁琴州的州都，四大名门的艾尔巴雷亚公爵家治理的大都市。 因着重绿色的美丽街景，而被称作「翡翠公都」。周周边作为宝石与皮毛的产地而闻名，负责加工它们的工匠也经常往来于此。\n",
+        "iconSize": "XXL",
+        "url": {
+            "title": "Cafe-巴利亚哈特",
+            "value": "https://trails-game.com/region/Bareahard/"
+        }
+    },
+    {
+        "id": 102,
+        "layerId": 8,
+        "position": [
+            -66.9140625,
+            47.2890625
+        ],
+        "icon": "https://trails-game.com/wp-content/uploads/2020/06/arseid.png",
+        "title": "雷格拉姆",
+        "content": "![](https://trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/legram.jpg.webp)\n\n坐落于巴利亚哈特西南方，近邻艾贝尔湖的湖畔之镇。由亚尔赛德子爵家治理。与沙萨兰特州有着定期水上航运，有许多来此度假的旅客。同时被称为《光之剑匠》的子爵在此开设了练武场，众多习武者慕名而来。 这座湖畔的小镇常常被雾气环绕，不仅流传着许多令人心醉神迷的妖精、魔物传说。 艾贝尔湖对岸的悬崖边上，耸立着罗恩格林城，据说曾为枪之圣女桑德罗特的根据地，目前已化为废墟，传说圣女之灵会在月圆之夜出现。 ",
+        "iconSize": "XXL",
+        "url": {
+            "title": "Cafe-雷格拉姆",
+            "value": "https://trails-game.com/region/Legram/"
+        }
+    },
+    {
+        "id": 103,
+        "layerId": 6,
+        "position": [
+            -67.4921875,
+            46.5234375
+        ],
+        "icon": "",
+        "title": "艾贝尔湖",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 104,
+        "layerId": 2,
+        "position": [
+            -61.0859375,
+            41.4375
+        ],
+        "icon": "",
+        "title": "利弗斯",
+        "content": "![](https://trails-game.com/wp-content/uploads/2023/03/levis-1024x474.webp)\n\n帝都西郊的一座小城，原是卡普亚男爵家的领地，后由于卡普亚的当家为人所骗而丢失，现为托尔兹第Ⅱ分校所在地。 \n\n1206年春，帝都西郊新设立的托尔兹第Ⅱ分校正式开始运作。除了有着复杂立场的贵族子女和外国人，克洛斯贝尔人之类的一些有着某种理由的学生聚集在此处之外，在北方战役活跃的”黄金罗刹“奥蕾莉亚、著名的导力学者G·修密特，以及作为年轻英雄闻名的黎恩·舒华泽在此地任教这样十分破格的人事安排也非常引人注目。 在本校有1~6组这6个班级，在第二分校则分为战术科（Ⅷ组）、会计科（Ⅸ组）以及学生人数非常少的特务科（Ⅶ组）这3个班级。 ",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-利弗斯",
+            "value": "https://trails-game.com/region/Leeves/"
+        }
+    },
+    {
+        "id": 105,
+        "layerId": 8,
+        "position": [
+            -59.28125,
+            39.875
+        ],
+        "icon": "",
+        "title": "黑之工房",
+        "content": "\n拉玛尔州东侧外围，深藏于葛雷朋山脉1000亚矩下的黑之工坊。由地精所建立。 代表性的制作品是特殊武装“战术壳”。 地精——在现代是以《黑色工房》的身份在活动。其真实身分是从女神爱德斯手中继承了『七至宝』之一，《大地至宝》一派的后代。出现于帝国各地的灵窟都是由地精所建。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-黑之工房",
+            "value": "https://trails-game.com/region/BlackWorkshop/"
+        }
+    },
+    {
+        "id": 106,
+        "layerId": 0,
+        "position": [
+            -62.5234375,
+            54.1015625
+        ],
+        "icon": "https://trails-game.com/wp-content/uploads/2020/06/crossbell.png",
+        "title": "克洛斯贝尔自治州",
+        "content": "![](https://cdn.trails-game.com/wp-content/uploads/2023/03/pres8111-1024x576.webp)\n\n位于塞姆利亚大陆西部的自治州。由于夹在埃雷波尼亚和卡尔瓦德这两大国的中间，自中世纪时代以来均是激烈领土纷争的对象，但在70年前视双方为宗主国，开创成为自治州。\n\n之后，州中心的克洛斯贝尔市已经发展成大陆屈指可数的巨大贸易都市，成为帝国和共和国间铁道和国际定期飞行船的中转站，近年更发展成国际性的金融都市。\n\n投入银行资本后，也实验性引进主题乐园等观光产业及导力网络等基础建设。但是必须缴纳庞大税金给帝国与共和国，由于没有国家主权，因此也产生各种矛盾与事件。此处沦为两大国之间争夺领土的标的，长年上演著剧烈的领土争夺战。甚至曾有一段时间沦为帝国境内的克洛斯贝尔州。\n\n如今已克服俗称「再次事变」的难关，奉亚尔特利亚法典国为宗主国，得以用自治州的形式再次独立。",
+        "iconSize": "XXL",
+        "url": {
+            "title": "Cafe-克洛斯贝尔",
+            "value": "https://trails-game.com/region/Crossbell/"
+        }
+    },
+    {
+        "id": 107,
+        "layerId": 2,
+        "position": [
+            -61.8828125,
+            55.0859375
+        ],
+        "icon": "",
+        "title": "克洛斯贝尔市",
+        "content": "![](https://trails-game.com/wp-content/uploads/2020/08/station_inner.png)\n\n克洛斯贝尔市区，是克洛斯贝尔自治州的核心。",
+        "iconSize": "XL",
+        "url": {
+            "title": "Cafe-克洛斯贝尔",
+            "value": "https://trails-game.com/region/crossbell/"
+        }
+    },
+    {
+        "id": 108,
+        "layerId": 1000,
+        "position": [
+            -62.671875,
+            54.8203125
+        ],
+        "icon": "",
+        "title": "圣乌尔斯医科大学",
+        "content": "![](https://cdn.trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/stursula.png.webp)\n\n\n在克洛斯贝尔南部、艾鲁姆湖畔建立的研究近代医疗技术的医科大学。 拥有大规模的医疗设施，不仅接受克洛斯贝尔市民，也接受各国来的重症病人和重伤患者。从克洛斯贝尔出发，乘坐30分钟导力巴士就能到达，十分便利。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-圣乌尔斯医科大学",
+            "value": "https://trails-game.com/region/saintursula/"
+        }
+    },
+    {
+        "id": 109,
+        "layerId": 8500,
+        "position": [
+            -62.25,
+            54.640625
+        ],
+        "icon": "",
+        "title": "星见之塔",
+        "content": "位于克洛斯贝尔南方森林中的星见之塔，由中世纪的炼金术士所建造。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-星见之塔",
+            "value": "https://trails-game.com/region/stargazer/"
+        }
+    },
+    {
+        "id": 110,
+        "layerId": 1000,
+        "position": [
+            -62.4375,
+            55.625
+        ],
+        "icon": "",
+        "title": "疗养地米修拉姆",
+        "content": "![](https://cdn.trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/michelam.png.webp)\n\n艾鲁姆湖对岸年代久远的疗养地，是贵族和资产家的别墅所在地。\n\n近几年由于IBC（克洛斯贝尔国际银行）的支持，开发进程快速，建成了度假酒店、高级商店以及大规模的主题公园，作为新的观光宝地而引人注目。从克洛斯贝尔的港湾区乘坐水上巴士即可到达。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-米修拉姆",
+            "value": "https://trails-game.com/region/michelam/"
+        }
+    },
+    {
+        "id": 111,
+        "layerId": 1000,
+        "position": [
+            -61.15625,
+            54.5234375
+        ],
+        "icon": "",
+        "title": "矿山镇玛因兹",
+        "content": "![](https://cdn.trails-game.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/08/mainz.png.webp)\n\n位于克洛斯贝尔西北部的山岳地带，采掘七耀石的矿山城镇。\n\n原本克洛斯贝尔就是以优质七耀石产地而闻名，由于近年来贸易金融方面也名声远扬，相对来说对矿业的注目程度就下降了。但是产量没有减少，也有很多直接来购买的外商。",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-矿山镇玛因兹",
+            "value": "https://trails-game.com/region/mainz/"
+        }
+    },
+    {
+        "id": 112,
+        "layerId": 8,
+        "position": [
+            -61.296875,
+            54.921875
+        ],
+        "icon": "",
+        "title": "罗赞贝尔克工房",
+        "content": "位于克洛斯贝尔州东北部，玛因兹山道中专注于人偶生产的工房，实际上则是十三工房之一，暗中研发戈尔迪亚斯级战术装置，工房主人为约鲁古。 ",
+        "iconSize": "M",
+        "url": {
+            "title": "Cafe-罗赞贝尔克工房",
+            "value": "https://trails-game.com/region/rosenberg/"
+        }
+    },
+    {
+        "id": 113,
+        "layerId": 8,
+        "position": [
+            -61.375,
+            54.390625
+        ],
+        "icon": "",
+        "title": "月之僧院",
+        "content": "位于克洛斯贝尔州玛因兹地区的中世纪古代遗迹，曾是D∴G教团的实验场所。僧院顶部有一座大钟，钟声为异变的象征。 ",
+        "iconSize": "M",
+        "url": {
+            "title": "Cafe-月之僧院",
+            "value": "https://trails-game.com/region/%e6%9c%88%e4%b9%8b%e5%83%a7%e9%99%a2/"
+        }
+    },
+    {
+        "id": 114,
+        "layerId": 7,
+        "position": [
+            -76.328125,
+            58.125
+        ],
+        "icon": "",
+        "title": "涅梅丝岛",
+        "content": "![](https://trails-game.com/wp-content/uploads/2023/03/Nemes-Island_kuro2_area.webp)\n\n位于兰波特南部海面上的孤岛，岛上有一个华丽的度假区，但也有一大部分地区为「未开发」的禁区。实际上是D∴G教团曾经最大的据点「乐园」的所在地。地下大空洞为教团最后的防线。教团覆灭后，被「破戒」贺伍德买下，开发成度假区。 \n\n\\*注: 游戏内未展示位置，此位置为猜测",
+        "iconSize": "L",
+        "url": {
+            "title": "Cafe-涅梅丝岛",
+            "value": "https://trails-game.com/region/nemeth/"
+        }
+    },
+    {
+        "id": 115,
+        "layerId": 3,
+        "position": [
+            -54.234375,
+            51.5703125
+        ],
+        "icon": "",
+        "title": "坚达门",
+        "content": "",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
+        }
+    },
+    {
+        "id": 116,
+        "layerId": 3,
+        "position": [
+            -69.015625,
+            73.65625
+        ],
+        "icon": "",
+        "title": "宇宙军基地",
+        "content": "刺向天空之剑！",
+        "iconSize": "L",
+        "url": {
+            "title": "",
+            "value": ""
         }
     }
 ]
