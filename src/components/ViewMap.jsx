@@ -39,24 +39,27 @@ let ViewMap = observer(function (props) {
 
         if (queueItem.toSinglelineString().toLowerCase() == "auv") {
             if (!StateCache.IsEditorMode) {
-                console.log("enter editor mode");
                 let result = window.confirm("是否进入编辑模式?");
                 if (result) {
+                    StateCache.Set3DMode(false);
                     StateCache.SetEditorMode(true);
-                } else {
-
-                }
+                } 
             } else {
                 if (!StateCache.IsEditing) {
                     let result = window.confirm("是否退出编辑模式?");
                     if (result) {
                         StateCache.SetEditorMode(false);
-                    } else {
-
                     }
                 }
             }
+        }else if(!StateCache.IsEditorMode && queueItem.toSinglelineString().toLowerCase() == "njx")
+        {
+            let result = window.confirm(StateCache.is3D ? "是否退出3D模式?":"是否进入3D模式?");
+            if(result){
+                StateCache.Set3DMode(!StateCache.is3D);
+            }
         }
+        
     }
 
     useEffect(() => {
@@ -83,15 +86,12 @@ let ViewMap = observer(function (props) {
 
         return null;
     }
-
-    let markerRef1 = React.createRef();
-
-    // pre load images
-    useEffect(() => {
-        //FitBoundsMap();
-    }, []);
+    const markerRef1 = React.createRef();
     return (
-        <React.Fragment>
+        <div className={StateCache.is3D ? "test3d" :"test2d"} style={{
+            width:"100%",
+            height:"100%"
+        }}>
             <MapContainer
                 id="LiveMap"
                 center={L.latLng([-64, 64])}
@@ -159,7 +159,7 @@ let ViewMap = observer(function (props) {
                 </div>
                 : null}
 
-        </React.Fragment>
+        </div>
     )
 });
 let lastClickTime = -1;
