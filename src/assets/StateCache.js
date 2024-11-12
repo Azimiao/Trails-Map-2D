@@ -25,6 +25,30 @@ let StateCache = observable(
             runInAction(() => {
                 this.EditingMarkerId = value;
             })
+        },
+        ShowingLayer: [],
+        SetLayerStatus(layerId, status) {
+            let index = this.ShowingLayer.findIndex(layerId);
+            if (status) {
+                if (index >= 0) {
+                    return;
+                }
+                runInAction(() => {
+                    this.ShowingLayer.push(layerId);
+                });
+            }else{
+                if(index >= 0){
+                    runInAction(()=>{
+                        this.ShowingLayer.splice(index,1);
+                    })
+                }
+            }
+        },
+        SetDefaultLayerValues(layers){
+            runInAction(()=>{
+                this.ShowingLayer = layers;
+                console.log("setItem:" + layers);
+            })
         }
     }
 )

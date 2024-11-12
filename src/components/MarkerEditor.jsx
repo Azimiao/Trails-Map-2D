@@ -120,7 +120,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                     ></ReactDropdown>
 
                     <h3>图标大小</h3>
-                    <ReactDropdown // 分类编辑器
+                    <ReactDropdown
                         options={MarkerSizeOptions}
                         value={this.state.iconSize}
                         onChange={this.OnIconSizeChanged}

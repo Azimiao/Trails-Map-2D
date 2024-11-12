@@ -19,6 +19,7 @@ import ViewMarker from "./Markers/ViewMarker";
 import MarkerEditor from "./MarkerEditor";
 import Queue from "@/utils/Queue";
 import ControlOverlay from "./ControlOverlay";
+import { Hidden } from "@material-ui/core";
 
 
 
@@ -30,6 +31,13 @@ let ViewMap = observer(function (props) {
     // LatLng(lat/纬度,lng/经度),横纬竖经
     let bounds = L.latLngBounds([L.latLng(0, 0), L.latLng(-128, 128)]);
     const hasFitBounds = useRef(false);
+
+    // useEffect(()=>{
+    //     const allLayerIds = LayerDataHelper.getAllLayerId();
+    //     console.log(allLayerIds);
+    //     StateCache.SetDefaultLayerValues(allLayerIds);
+    // },[]);
+
 
     const PopupKeyUp = (e) => {
         queueItem.enqueue(e.key);
@@ -87,9 +95,10 @@ let ViewMap = observer(function (props) {
     }
     const markerRef1 = React.createRef();
     return (
+        <React.Fragment>
         <div className={StateCache.is3D ? "test3d" : "test2d"} style={{
             width: "100%",
-            height: "100%"
+            height: "100%",
         }}>
 
             <MapContainer
@@ -115,6 +124,7 @@ let ViewMap = observer(function (props) {
                     LayerDataHelper.data.map((layerData, index) => {
 
                         return (
+                            // StateCache.ShowingLayer.includes(layerData.id) ?
                             layerData.show ?
                                 // <LayersControl.Overlay key={layerData.id} name={layerData.key} checked={true}>
                                 <MarkerClusterGroup
@@ -146,7 +156,6 @@ let ViewMap = observer(function (props) {
 
                 <FitBoundsOnce />
             </MapContainer>
-            <ControlOverlay></ControlOverlay>
             {StateCache.IsEditorMode && StateCache.IsEditing ?
                 <div id={"MapEditor"}>
                     <MarkerEditor
@@ -159,6 +168,9 @@ let ViewMap = observer(function (props) {
                 : null}
 
         </div>
+        
+        <ControlOverlay/>
+        </React.Fragment>
     )
 });
 let lastClickTime = -1;

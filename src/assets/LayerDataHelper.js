@@ -1,4 +1,5 @@
-import { observable } from "mobx";
+import I18nHelper from "@/utils/I18nHelper";
+import { observable, runInAction } from "mobx";
 
 //fixed
 let LayerDataHelper = observable({
@@ -34,9 +35,9 @@ let LayerDataHelper = observable({
             "show": true
         },
         {
-            "id": 3,
-            "key": "gate",
-            "icon": "gate.png",
+            "id": 1000,
+            "key":"village",
+            "icon": "village.png",
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
@@ -44,9 +45,9 @@ let LayerDataHelper = observable({
             "show": true
         },
         {
-            "id": 4,
-            "key": "road",
-            "icon": "cave.png",
+            "id": 7,
+            "key": "nature",
+            "icon": "nature.png",
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
@@ -74,9 +75,9 @@ let LayerDataHelper = observable({
             "show": true
         },
         {
-            "id": 7,
-            "key": "nature",
-            "icon": "nature.png",
+            "id": 4,
+            "key": "road",
+            "icon": "cave.png",
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
@@ -84,25 +85,16 @@ let LayerDataHelper = observable({
             "show": true
         },
         {
-            "id": 8,
-            "key": "special",
-            "icon": "special.png",
+            "id": 3,
+            "key": "gate",
+            "icon": "gate.png",
             "size": "L",
             "showTitle": false,
             "zIndexOffset":0,
             "autoGroup": true,
             "show": true
         },
-        {
-            "id": 1000,
-            "key":"village",
-            "icon": "village.png",
-            "size": "L",
-            "showTitle": false,
-            "zIndexOffset":0,
-            "autoGroup": true,
-            "show": true
-        },
+
         {
             "id": 2000,
             "key":"airport",
@@ -162,14 +154,33 @@ let LayerDataHelper = observable({
             "zIndexOffset":0,
             "autoGroup": true,
             "show": true
+        },
+        {
+            "id": 8,
+            "key": "special",
+            "icon": "special.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true,
+            "show": true
         }
     ],
-    getAllLayerKey() {
-        let allLayerKey = [];
-        this.data.forEach(element => {
-            allLayerKey.push(element.key);
+
+    setShowStatus(id,status){
+        let index = this.data.findIndex(item=>item.id == id);
+        runInAction(()=>{
+            if(index >=0){
+                this.data[index].show = status;
+            }
         });
-        return allLayerKey;
+    },
+
+    getAllLayerId(){
+        return this.data.map(item=>item.id);
+    },
+    getAllLayerKey() {
+        return this.data.map(item=>item.key);
     },
     getLayerById(id) {
         for (const key in this.data) {
@@ -197,7 +208,7 @@ let LayerDataHelper = observable({
             const element = this.data[i];
             let a = {};
             a.value = element.id;
-            a.label = element.key;
+            a.label = I18nHelper.GetTranslateString(element.key);
             optionList.push(a);
         }
         return optionList;

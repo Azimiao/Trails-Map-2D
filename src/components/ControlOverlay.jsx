@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Divider, Drawer, FormControlLabel, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Divider, Drawer, FormControlLabel, Grid, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -17,6 +17,11 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import { observer } from 'mobx-react';
+import I18nHelper from '@/utils/I18nHelper';
+import StateCache from '@/assets/StateCache';
+import GuideOverlay from './GuideOverlay';
+
 
 const useStyles = makeStyles((theme) => ({
     controlOverlay: {
@@ -34,14 +39,14 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         position: "fixed",
-        right: (props) => (props.drawerState ? 240 : -10),
+        right: (props) => (props.drawerState ? 270 : -10),
         transition: "right 225ms cubic-bezier(0, 0, 0.2, 1)",
         top: 20,
         zIndex: 99999,
         pointerEvents: "auto"
     },
     list: {
-        width: 250,
+        width: 280,
         // pointerEvents:"auto"
     },
     fullList: {
@@ -52,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function ControlOverlay() {
+const ControlOverlay = observer(function () {
 
     const [drawerState, setDrawerState] = React.useState(false);
     const classes = useStyles({ drawerState });
@@ -85,7 +90,7 @@ function ControlOverlay() {
             <h1 style={{
                 textAlign: "center"
             }}>
-                图层控制
+                {I18nHelper.GetTranslateString("control_panel")}
             </h1>
             <Accordion
                 defaultExpanded={true}
@@ -95,24 +100,30 @@ function ControlOverlay() {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography className={classes.heading}>展示控制</Typography>
+                    <Typography className={classes.heading}>{I18nHelper.GetTranslateString("view_layer")}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend">施工中</FormLabel>
-                        <FormGroup>
-                            <FormControlLabel
-                                control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
-                                label="Gilad Gray"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
-                                label="Jason Killian"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
-                                label="Antoine Llorca"
-                            />
+                        {/* <FormLabel component="legend">展示的层</FormLabel> */}
+                        <FormGroup
+                        // row sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}
+                        >
+                            <Grid container spacing={0}>
+                                {
+                                    LayerDataHelper.data.map((item, index) => {
+                                        return (
+                                            <Grid item xs={6}>
+                                                <FormControlLabel
+                                                    item key={item.key}
+                                                    control={<Checkbox checked={item.show} onChange={(event, checked) => {
+                                                        LayerDataHelper.setShowStatus(item.id, checked);
+                                                    }} name={item.key} />}
+                                                    label={I18nHelper.GetTranslateString(item.key)}
+                                                />
+                                            </Grid>)
+                                    })
+                                }
+                            </Grid>
                         </FormGroup>
                         {/* <FormHelperText>Be careful</FormHelperText> */}
                     </FormControl>
@@ -124,11 +135,26 @@ function ControlOverlay() {
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <Typography className={classes.heading}>特殊</Typography>
+                    <Typography className={classes.heading}>
+                        {I18nHelper.GetTranslateString("special")}
+                        </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        施工中
+                    <FormControlLabel
+                        item key={"open3D"}
+                        control={<Checkbox checked={StateCache.is3D} onChange={(event, checked) => {
+                            StateCache.Set3DMode(checked);
+                        }} name={"open3D"} />}
+                        label={I18nHelper.GetTranslateString("fake3d")}
+                    />
+                    <FormControlLabel
+                        item key={"editormode"}
+                        control={<Checkbox checked={StateCache.IsEditorMode} onChange={(event, checked) => {
+                            StateCache.SetEditorMode(checked);
+                        }} name={"editormode"} />}
+                        label={I18nHelper.GetTranslateString("editor_mode")}
+                    />
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -138,11 +164,15 @@ function ControlOverlay() {
                     aria-controls="panel3a-content"
                     id="panel3a-header"
                 >
-                    <Typography className={classes.heading}>关于</Typography>
+                    <Typography className={classes.heading}>{I18nHelper.GetTranslateString("about")}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        梓喵出没出品
+                        <h3>Trails Map Demo</h3>
+                            Powered by 梓喵出没<br/>
+                            Based on React & MUI & React-Leaflet & ByteMD<br/>
+                            Icon licensed by veryicon.com's jackyyhj (Free for personal and commercial purpose.)<br/>
+                            Map resources owned by Falcom
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -151,7 +181,7 @@ function ControlOverlay() {
 
 
     return (
-        <div>
+        <React.Fragment>
             <Button
                 className={classes.button}
                 onClick={() => toggleDrawer(!drawerState)}
@@ -162,7 +192,7 @@ function ControlOverlay() {
                     drawerState ? <ArrowForwardIcon /> : <ArrowBackIcon />
                 }
                 {
-                    drawerState ? "收起" : "图层控制"
+                    drawerState ? I18nHelper.GetTranslateString("fold_up") : I18nHelper.GetTranslateString("control_panel")
                 }
             </Button>
             <React.Fragment key={"right"}>
@@ -177,8 +207,9 @@ function ControlOverlay() {
                     {list()}
                 </Drawer>
             </React.Fragment>
-        </div>
+            <GuideOverlay/>
+        </React.Fragment>
     )
-}
+});
 
 export default ControlOverlay;
