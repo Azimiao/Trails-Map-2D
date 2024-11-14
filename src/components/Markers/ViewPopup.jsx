@@ -1,6 +1,5 @@
 import React from "react";
 import { Popup } from "react-leaflet";
-import L from "leaflet";
 import Parser from 'html-react-parser';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import StateCache from "@/assets/StateCache";
@@ -83,6 +82,7 @@ const ViewPopup = (props)=>{
                     <a
                         href={url.value}
                         target={"_blank"}
+                        rel={"noreferrer"}
                     >
                         <OpenInNewIcon className={classes.Icon} />
                         {url.title}

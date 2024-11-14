@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Editor as ByteMDEditor,Viewer as ByteMDViewer } from '@bytemd/react';
+import React from 'react'
+import { Editor as ByteMDEditor } from '@bytemd/react';
 import 'bytemd/dist/index.css';
 import StateCache from '../assets/StateCache';
 import MarkerDataHelper from '../assets/MarkerDataHelper';
@@ -9,17 +9,12 @@ import ReactDropdown from 'react-dropdown';
 import "react-dropdown/style.css";
 import LayerDataHelper from '@/assets/LayerDataHelper';
 import MarkerSize from '@/assets/MarkerSizeConfig';
-const prefix = 'leaflet-popup-button';
 
 
 
 
 
 const MarkerEditor = observer(class MarkerEditorC extends Component {
-
-    constructor(props) {
-        super(props);
-    }
     componentDidMount() {
         var oldMarkerData;
         if (StateCache.EditingMarkerId >= 0) {
@@ -115,7 +110,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                 <h3>分类</h3>
                     <ReactDropdown // 分类编辑器
                         options={layerOptions}
-                        value={layerOptions.filter((item) => { return item.value == this.state.layerId })[0]}
+                        value={layerOptions.filter((item) => { return item.value === this.state.layerId })[0]}
                         onChange={this.OnLayerChanged}
                     ></ReactDropdown>
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const importAllImages = (requireContext) => {
     let images = {};
     requireContext.keys().forEach((item) => {
@@ -13,7 +11,7 @@ const IconHelper = {
     default:"default.png",
     error:"unknown.png",
     getIcon :function (key){
-        if(key == null || key == ""){
+        if(key == null || key === ""){
             key = this.default;
         }
         if(this.images.hasOwnProperty(key)){

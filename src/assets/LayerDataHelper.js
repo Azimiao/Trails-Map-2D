@@ -168,7 +168,7 @@ let LayerDataHelper = observable({
     ],
 
     setShowStatus(id,status){
-        let index = this.data.findIndex(item=>item.id == id);
+        let index = this.data.findIndex(item=>item.id === id);
         runInAction(()=>{
             if(index >=0){
                 this.data[index].show = status;
@@ -186,7 +186,7 @@ let LayerDataHelper = observable({
         for (const key in this.data) {
             if (Object.hasOwnProperty.call(this.data, key)) {
                 const element = this.data[key];
-                if (element.id == id) {
+                if (element.id === id) {
                     return element;
                 }
             }
@@ -196,7 +196,7 @@ let LayerDataHelper = observable({
     getLayerByKey(key){
         for (let i = 0; i < this.data.length; i++) {
             const element = this.data[i];
-            if(element.key == key){
+            if(element.key === key){
                 return element;
             }
         }

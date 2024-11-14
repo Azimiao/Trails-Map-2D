@@ -1,11 +1,11 @@
-import { MapContainer, TileLayer, useMap, Marker, Popup, LayersControl, LayerGroup, useMapEvent } from "react-leaflet";
+import { MapContainer, TileLayer, useMap,  useMapEvent } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-sidebar-v2/css/leaflet-sidebar.css";
 import "fontawesome-free/css/all.css";
 import "../assets/css/LiveMap.css";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { observer } from "mobx-react";
 
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
@@ -19,7 +19,6 @@ import ViewMarker from "./Markers/ViewMarker";
 import MarkerEditor from "./MarkerEditor";
 import Queue from "@/utils/Queue";
 import ControlOverlay from "./ControlOverlay";
-import { Hidden } from "@material-ui/core";
 
 
 
@@ -45,7 +44,7 @@ let ViewMap = observer(function (props) {
             queueItem.dequeue();
         }
 
-        if (queueItem.toSinglelineString().toLowerCase() == "auv") {
+        if (queueItem.toSinglelineString().toLowerCase() === "auv") {
             if (!StateCache.IsEditorMode) {
                 let result = window.confirm("是否进入编辑模式?");
                 if (result) {
@@ -60,7 +59,7 @@ let ViewMap = observer(function (props) {
                     }
                 }
             }
-        } else if (!StateCache.IsEditorMode && queueItem.toSinglelineString().toLowerCase() == "njx") {
+        } else if (!StateCache.IsEditorMode && queueItem.toSinglelineString().toLowerCase() === "njx") {
             let result = window.confirm(StateCache.is3D ? "是否退出3D模式?" : "是否进入3D模式?");
             if (result) {
                 StateCache.Set3DMode(!StateCache.is3D);

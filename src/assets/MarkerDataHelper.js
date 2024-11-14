@@ -13,7 +13,7 @@ let MarkerDataHelper = observable(
 
         GetMarkerById(markerId) {
             for (let i = 0; i < this.data.length; i++) {
-                if (this.data[i].id == markerId) {
+                if (this.data[i].id === markerId) {
                     return this.data[i];
                 }
             }
@@ -23,7 +23,7 @@ let MarkerDataHelper = observable(
             let result = false;
             await runInAction(() => {
                 for (let i = 0; i < this.data.length; i++) {
-                    if (this.data[i].id == markerId) {
+                    if (this.data[i].id === markerId) {
                         this.data.splice(i, 1);
                         result = true;
                         break;
@@ -55,7 +55,7 @@ let MarkerDataHelper = observable(
             let result = false;
             await runInAction(() => {
                 for (let i = 0; i < this.data.length; i++) {
-                    if (this.data[i].id == markerId) {
+                    if (this.data[i].id === markerId) {
                         this.data[i].layerId = newLayerObj.layerId;
                         this.data[i].position = newLayerObj.position ?? this.data[i].position;
                         this.data[i].icon = newLayerObj.icon;

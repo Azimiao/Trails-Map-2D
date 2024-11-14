@@ -1,22 +1,13 @@
 import React from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Divider, Drawer, FormControlLabel, Grid, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Drawer, FormControlLabel, Grid } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import LayerDataHelper from '@/assets/LayerDataHelper';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import { observer } from 'mobx-react';
 import I18nHelper from '@/utils/I18nHelper';
 import StateCache from '@/assets/StateCache';
@@ -61,19 +52,6 @@ const ControlOverlay = observer(function () {
 
     const [drawerState, setDrawerState] = React.useState(false);
     const classes = useStyles({ drawerState });
-
-    const [state, setState] = React.useState({
-        gilad: true,
-        jason: false,
-        antoine: false,
-    });
-
-    const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-    };
-
-    const { gilad, jason, antoine } = state;
-    const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
 
     const toggleDrawer = (open) => {
         console.log(open);

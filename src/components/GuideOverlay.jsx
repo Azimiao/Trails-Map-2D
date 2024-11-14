@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Box, CircularProgress, createTheme, Dialog, DialogContent, DialogTitle, IconButton, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
+import { Box, CircularProgress, Dialog, DialogContent, DialogTitle, IconButton, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types';
-import { Folder as FolderIcon, Close as CloseIcon, LocalDining } from '@material-ui/icons';
+import { Folder as FolderIcon, Close as CloseIcon } from '@material-ui/icons';
 
 import { Viewer as ByteMDViewer } from '@bytemd/react';
 
@@ -106,17 +106,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function TabPanel(props) {
-    const { children, value, index,targetMDFile, ...other } = props;
+    const { children, value, index, targetmdFile, ...other } = props;
     const classes = useStyles();
-    const [markdownStr,SetMarkDownStr] = useState("");
-
-    useEffect(()=>{
-        if(targetMDFile){
-            fetch(targetMDFile).then(res=>res.text().then(text=>{
-            SetMarkDownStr(text);
+    const [markdownStr, SetMarkDownStr] = useState("");
+    useEffect(() => {
+        if (targetmdFile != null) {
+            fetch(targetmdFile).then(res => res.text().then(text => {
+                SetMarkDownStr(text);
             }));
         }
-    },[]);
+    }, [targetmdFile]);
     return (
         <div
             role="tabpanel"
@@ -132,8 +131,8 @@ function TabPanel(props) {
                     paddingBottom: 0
                 }} p={3}>
                     <Typography>
-                        {targetMDFile != null && markdownStr.length > 0 ? 
-                        <ByteMDViewer value={markdownStr}></ByteMDViewer>
+                        {targetmdFile && markdownStr.length > 0 ?
+                            <ByteMDViewer value={markdownStr}></ByteMDViewer>
                             : children
                         }
                     </Typography>
@@ -143,18 +142,18 @@ function TabPanel(props) {
     );
 }
 
-const GuideOverlay = observer(function() {
+const GuideOverlay = observer(function () {
     const classes = useStyles();
 
     const [value, setValue] = React.useState(0);
 
-    useEffect(()=>{
+    useEffect(() => {
         var a = localStorage.getItem("guideShowd");
-        if(a == null || a.length <= 0){
+        if (a == null || a.length <= 0) {
             // Open
             StateCache.SetGuideLayerValues(false);
         }
-    },[]);
+    }, []);
 
 
     const handleChange = (event, newValue) => {
@@ -165,7 +164,7 @@ const GuideOverlay = observer(function() {
 
     const onClose = () => {
         StateCache.SetGuideLayerValues(true);
-        localStorage.setItem("guideShowd","1");
+        localStorage.setItem("guideShowd", "1");
     };
 
     return (
@@ -201,19 +200,19 @@ const GuideOverlay = observer(function() {
                         <Tab label="进阶" {...a11yProps(4)} />
                     </Tabs>
                     <TabPanel value={value} index={0} targetMDFile={FirstStartMD}>
-                        <CircularProgress/>
+                        <CircularProgress />
                     </TabPanel>
                     <TabPanel value={value} index={1} targetMDFile={ControlPanelMD}>
-                    <CircularProgress/>
+                        <CircularProgress />
                     </TabPanel>
                     <TabPanel value={value} index={2} targetMDFile={EditorModeMD}>
-                    <CircularProgress/>
+                        <CircularProgress />
                     </TabPanel>
                     <TabPanel value={value} index={3} targetMDFile={ThreeDModeMD}>
-                    <CircularProgress/>
+                        <CircularProgress />
                     </TabPanel>
                     <TabPanel value={value} index={4} targetMDFile={OtherMD}>
-                    <CircularProgress/>
+                        <CircularProgress />
                     </TabPanel>
                 </div>
             </DialogContent>
