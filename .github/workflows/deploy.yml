@@ -34,7 +34,7 @@ jobs:
           npm run build
         fi
 
-    - name: Clean server directory but keep 'map' folder
+    - name: Clean server directory but keep 'maps' folder
       env:
         SERVER_HOST: ${{ secrets.SERVER_HOST }}
         SERVER_USER: ${{ secrets.SERVER_USER }}

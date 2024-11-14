@@ -1,4 +1,4 @@
-export default {
+const I18nHelper = {
     translate_cn:{
         "country":"国家/地区",
         "region":"州",
@@ -29,3 +29,5 @@ export default {
         return this.translate_cn.hasOwnProperty(key) ? this.translate_cn[key] : key;
     }
 }
+
+export default I18nHelper;
