@@ -174,7 +174,7 @@ const GuideOverlay = observer(function() {
                 <div className={classes.dialogTitleLayout}>
                     <FolderIcon className={classes.dialogTitleIcon} />
                     <Typography variant="h6" className={classes.dialogTitleText}>
-                        新手引导(🪧施工中🚧)
+                        新手引导
                     </Typography>
                     <IconButton onClick={onClose} color="inherit">
                         <CloseIcon />
