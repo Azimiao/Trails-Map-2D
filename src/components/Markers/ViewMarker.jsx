@@ -4,24 +4,27 @@ import L from "leaflet";
 import ViewPopup from "./ViewPopup"
 import LayerDataHelper from '@/assets/LayerDataHelper';
 import MarkerSize from '@/assets/MarkerSizeConfig';
+import IconHelper from '@/assets/IconHelper';
+
 /**
  * 标注点
  * @param {*} props 
  * @returns 
  */
 const ViewMarker = (props) => {
+
     const getIcon = (layerData, markerData) => {
         const str = markerData.icon && markerData.icon.length > 0 ? markerData.icon
             : layerData && layerData.icon.length > 0 ? layerData.icon
                 : null;
 
         if (str == null) {
-            return require("@images/markers/default.png");;
+            return IconHelper.getIcon();
         }
         if (str.startsWith("http") || str.startsWith("data:image")) {
             return str;
         }
-        return require("@images/markers/" + str);
+        return IconHelper.getIcon(str);
 
     }
 

@@ -21,7 +21,9 @@ export default {
         "control_panel":"控制面板",
         "view_layer":"展示图层",
         "about":"关于",
-        "fold_up":"收起"
+        "fold_up":"收起",
+        "trails_map":"轨迹地图",
+        "zemuria_map":"塞姆利亚大陆地图"
     },
     GetTranslateString(key){
         return this.translate_cn.hasOwnProperty(key) ? this.translate_cn[key] : key;

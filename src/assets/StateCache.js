@@ -36,21 +36,29 @@ let StateCache = observable(
                 runInAction(() => {
                     this.ShowingLayer.push(layerId);
                 });
-            }else{
-                if(index >= 0){
-                    runInAction(()=>{
-                        this.ShowingLayer.splice(index,1);
+            } else {
+                if (index >= 0) {
+                    runInAction(() => {
+                        this.ShowingLayer.splice(index, 1);
                     })
                 }
             }
         },
-        SetDefaultLayerValues(layers){
-            runInAction(()=>{
+        SetDefaultLayerValues(layers) {
+            runInAction(() => {
                 this.ShowingLayer = layers;
                 console.log("setItem:" + layers);
             })
+        },
+        guideShowd: true,
+        SetGuideLayerValues(state) {
+            runInAction(() => {
+                this.guideShowd = state;
+            });
         }
-    }
+    },
+
+
 )
 
 export default StateCache;

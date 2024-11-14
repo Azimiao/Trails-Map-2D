@@ -1,9 +1,20 @@
-import React from 'react'
-import { Box, createTheme, Dialog, DialogContent, DialogTitle, IconButton, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
+import React, { useEffect, useState } from 'react'
+import { Box, CircularProgress, createTheme, Dialog, DialogContent, DialogTitle, IconButton, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types';
-import { Folder as FolderIcon, Close as CloseIcon } from '@material-ui/icons';
+import { Folder as FolderIcon, Close as CloseIcon, LocalDining } from '@material-ui/icons';
+
+import { Viewer as ByteMDViewer } from '@bytemd/react';
+
+import FirstStartMD from "../assets/docs/FirstStart.md";
+import ControlPanelMD from "../assets/docs/ControlPanel.md";
+import EditorModeMD from "../assets/docs/EditorMode.md";
+import ThreeDModeMD from "../assets/docs/ThreeDMode.md";
+import OtherMD from "../assets/docs/Other.md";
+import StateCache from '@/assets/StateCache';
+import { observer } from 'mobx-react';
 
 
+// 记得图片的 minheight
 
 TabPanel.propTypes = {
     children: PropTypes.node,
@@ -95,9 +106,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
+    const { children, value, index,targetMDFile, ...other } = props;
     const classes = useStyles();
+    const [markdownStr,SetMarkDownStr] = useState("");
 
+    useEffect(()=>{
+        if(targetMDFile){
+            fetch(targetMDFile).then(res=>res.text().then(text=>{
+            SetMarkDownStr(text);
+            }));
+        }
+    },[]);
     return (
         <div
             role="tabpanel"
@@ -112,33 +131,50 @@ function TabPanel(props) {
                     paddingTop: 0,
                     paddingBottom: 0
                 }} p={3}>
-                    <Typography>{children}</Typography>
+                    <Typography>
+                        {targetMDFile != null && markdownStr.length > 0 ? 
+                        <ByteMDViewer value={markdownStr}></ByteMDViewer>
+                            : children
+                        }
+                    </Typography>
                 </Box>
             )}
         </div>
     );
 }
 
-function GuideOverlay() {
+const GuideOverlay = observer(function() {
     const classes = useStyles();
+
     const [value, setValue] = React.useState(0);
+
+    useEffect(()=>{
+        var a = localStorage.getItem("guideShowd");
+        if(a == null || a.length <= 0){
+            // Open
+            StateCache.SetGuideLayerValues(false);
+        }
+    },[]);
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
-    const [openStatus,setOpenStatus] = React.useState(true);
+
+
     const onClose = () => {
-        setOpenStatus(false)
+        StateCache.SetGuideLayerValues(true);
+        localStorage.setItem("guideShowd","1");
     };
 
     return (
-        <Dialog open={openStatus} onClose={onClose} maxWidth="sm" fullWidth className={classes.dialog}>
+        <Dialog open={!StateCache.guideShowd} onClose={onClose} maxWidth="sm" fullWidth className={classes.dialog}>
             <DialogTitle component={"h5"} className={classes.dialogTitle}>
                 <div className={classes.dialogTitleLayout}>
                     <FolderIcon className={classes.dialogTitleIcon} />
                     <Typography variant="h6" className={classes.dialogTitleText}>
-                        新手引导
+                        新手引导(🪧施工中🚧)
                     </Typography>
                     <IconButton onClick={onClose} color="inherit">
                         <CloseIcon />
@@ -160,49 +196,29 @@ function GuideOverlay() {
                     >
                         <Tab label="地图操作" {...a11yProps(0)} />
                         <Tab label="控制面板" {...a11yProps(1)} />
-                        <Tab label="伪3D模式" {...a11yProps(2)} />
-                        <Tab label="编辑模式" {...a11yProps(3)} />
+                        <Tab label="编辑模式" {...a11yProps(2)} />
+                        <Tab label="伪3D模式" {...a11yProps(3)} />
                         <Tab label="进阶" {...a11yProps(4)} />
                     </Tabs>
-                    <TabPanel value={value} index={0}>
-                        👨‍🏭施工中🚧🚧🚧🚧🚧<br />
-                        🏗️施工中🚧🚧🚧🚧🚧<br />
-                        测试文本👇<br/>
-                        整个轨迹系列的剧情围绕塞姆利亚大陆展开，不同作品的故事舞台为大陆的不同国家/地区，每部作品的主角与配角会随着系列整个故事剧情的推进而邂逅
-                        <br />
-                        🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br />
-                        每部作品的详细介绍可以在作品一览页面查看，其中包含了目前登录的游戏平台 (例如: Steam)，是否存在中文版, 预计发售日期等信息
-                        <br />
-                        🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br />
-                        按照游戏发布顺序的完整攻略顺序应为:
-                        <br />
-                        🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br />
-                        空之轨迹FC → 空之轨迹SC → 空之轨迹3RD → 零之轨迹 → 碧之轨迹 → 闪之轨迹I → 闪之轨迹II → 闪之轨迹III → 闪之轨迹IV → 创之轨迹 → 黎之轨迹 → 黎之轨迹II
-                        <br />
-                        🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br />
-                        其中空之轨迹→碧之轨迹都是3D/2.5D像素小人，从闪之轨迹开始改变为真正的3D建模
-                        <br />
-                        🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br />
-                        如果想要从比较新的作品开始入坑，可以从闪轨I开始。可能会有一些支线剧情无法理解，但是并不影响游戏体验。但是在开始创轨之前最好把零之轨迹补完，因为创轨三条主线中的一条和零碧有很大关系。另外, 空之轨迹的角色也会在闪之轨迹的后期以及创之轨迹中登场
-                        <br />
-                        🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br />
+                    <TabPanel value={value} index={0} targetMDFile={FirstStartMD}>
+                        <CircularProgress/>
                     </TabPanel>
-                    <TabPanel value={value} index={1}>
-                    🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️🏗️<br />
+                    <TabPanel value={value} index={1} targetMDFile={ControlPanelMD}>
+                    <CircularProgress/>
                     </TabPanel>
-                    <TabPanel value={value} index={2}>
-                    🧱🧱🧱🧱🧱🧱🧱🏗️<br />
+                    <TabPanel value={value} index={2} targetMDFile={EditorModeMD}>
+                    <CircularProgress/>
                     </TabPanel>
-                    <TabPanel value={value} index={3}>
-                    🔨🔨🔨🔨🔨🔨🔨🔨🔨<br />
+                    <TabPanel value={value} index={3} targetMDFile={ThreeDModeMD}>
+                    <CircularProgress/>
                     </TabPanel>
-                    <TabPanel value={value} index={4}>
-                    🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧<br />
+                    <TabPanel value={value} index={4} targetMDFile={OtherMD}>
+                    <CircularProgress/>
                     </TabPanel>
                 </div>
             </DialogContent>
         </Dialog>
     )
-}
+});
 
 export default GuideOverlay;
