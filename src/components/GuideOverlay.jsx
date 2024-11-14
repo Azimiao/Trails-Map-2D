@@ -106,16 +106,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function TabPanel(props) {
-    const { children, value, index, targetmdFile, ...other } = props;
+    const { children, value, index, targetMDFile, ...other } = props;
     const classes = useStyles();
     const [markdownStr, SetMarkDownStr] = useState("");
     useEffect(() => {
-        if (targetmdFile != null) {
-            fetch(targetmdFile).then(res => res.text().then(text => {
+        if (targetMDFile != null) {
+            fetch(targetMDFile).then(res => res.text().then(text => {
                 SetMarkDownStr(text);
             }));
         }
-    }, [targetmdFile]);
+    }, [targetMDFile]);
     return (
         <div
             role="tabpanel"
@@ -131,7 +131,7 @@ function TabPanel(props) {
                     paddingBottom: 0
                 }} p={3}>
                     <Typography>
-                        {targetmdFile && markdownStr.length > 0 ?
+                        {targetMDFile && markdownStr.length > 0 ?
                             <ByteMDViewer value={markdownStr}></ByteMDViewer>
                             : children
                         }
