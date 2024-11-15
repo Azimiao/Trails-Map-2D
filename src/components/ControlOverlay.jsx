@@ -12,7 +12,9 @@ import { observer } from 'mobx-react';
 import I18nHelper from '@/utils/I18nHelper';
 import StateCache from '@/assets/StateCache';
 import GuideOverlay from './GuideOverlay';
+import GitInfo from "react-git-info/macro";
 
+const gitInfo = GitInfo();
 
 const useStyles = makeStyles((theme) => ({
     controlOverlay: {
@@ -133,6 +135,13 @@ const ControlOverlay = observer(function () {
                         }} name={"editormode"} />}
                         label={I18nHelper.GetTranslateString("editor_mode")}
                     />
+                    <FormControlLabel
+                        item key={"guidemode"}
+                        control={<Checkbox checked={!StateCache.guideShowd} onChange={(event, checked) => {
+                            StateCache.SetGuideLayerValues(!checked);
+                        }} name={"guidemode"} />}
+                        label={I18nHelper.GetTranslateString("guidemode")}
+                    />
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -146,17 +155,15 @@ const ControlOverlay = observer(function () {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        <h3>Trails Map Demo</h3>
-                            Powered by 梓喵出没<br/>
-                            Based on React & MUI & React-Leaflet & ByteMD<br/>
-                            Icon licensed by veryicon.com's jackyyhj (Free for personal and commercial purpose.)<br/>
-                            Map resources owned by Falcom
+                        <h3>{I18nHelper.GetTranslateString("zemuria_map")}</h3>
+                            {I18nHelper.GetTranslateString("version")}: <a href={`https://github.com/Azimiao/Trails-Map-2D/commit/${gitInfo.commit.hash}`} target={"_blank"} rel='noreferrer'>{gitInfo.commit.shortHash}</a><br/>
+                            {I18nHelper.GetTranslateString("build")}: {new Date(gitInfo.commit.date).toLocaleString()}<br/>
+                            powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a>
                     </Typography>
                 </AccordionDetails>
             </Accordion>
         </div>
     );
-
 
     return (
         <React.Fragment>

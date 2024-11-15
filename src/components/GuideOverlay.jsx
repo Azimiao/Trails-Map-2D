@@ -197,7 +197,7 @@ const GuideOverlay = observer(function () {
                         <Tab label="控制面板" {...a11yProps(1)} />
                         <Tab label="编辑模式" {...a11yProps(2)} />
                         <Tab label="伪3D模式" {...a11yProps(3)} />
-                        <Tab label="进阶" {...a11yProps(4)} />
+                        <Tab label="版权声明" {...a11yProps(4)} />
                     </Tabs>
                     <TabPanel value={value} index={0} targetMDFile={FirstStartMD}>
                         <CircularProgress />

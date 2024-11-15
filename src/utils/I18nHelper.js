@@ -23,7 +23,11 @@ const I18nHelper = {
         "about":"关于",
         "fold_up":"收起",
         "trails_map":"轨迹地图",
-        "zemuria_map":"塞姆利亚大陆地图"
+        "zemuria_map":"塞姆利亚大陆地图",
+        "version": "版本",
+        "build":"构建",
+        "time":"时间",
+        "guidemode":"新手引导"
     },
     GetTranslateString(key){
         return this.translate_cn.hasOwnProperty(key) ? this.translate_cn[key] : key;

@@ -44,6 +44,8 @@ const useStyles = makeStyles((theme)=>({
             maxWidth:'100%',
             height:'auto',
             borderRadius:'5px',
+            minHeight:'50px',
+            background:"#f1f1f1ff",
         },
         "& p":{
         marginTop:0,

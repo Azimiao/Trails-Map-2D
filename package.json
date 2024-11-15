@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Azimiao/Trails-Map-2D.git"
+  },
   "dependencies": {
     "@bytemd/react": "^1.21.0",
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
@@ -31,6 +35,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "git-info": "echo export default \"{\\\"logMessage\\\": \\\"$(git log -1 --oneline)\\\"}\"  > src/_git_commit.js",
+    "precommit": "lint-staged",
     "start": "craco  start",
     "build": "craco  build",
     "test": "craco  test",
@@ -58,6 +64,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
+    "react-git-info": "^2.0.1",
     "styled-components": "^6.0.3"
   }
 }
