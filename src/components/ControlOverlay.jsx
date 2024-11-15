@@ -158,7 +158,8 @@ const ControlOverlay = observer(function () {
                         <h3>{I18nHelper.GetTranslateString("zemuria_map")}</h3>
                             {I18nHelper.GetTranslateString("version")}: <a href={`https://github.com/Azimiao/Trails-Map-2D/commit/${gitInfo.commit.hash}`} target={"_blank"} rel='noreferrer'>{gitInfo.commit.shortHash}</a><br/>
                             {I18nHelper.GetTranslateString("build")}: {new Date(gitInfo.commit.date).toLocaleString()}<br/>
-                            powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a>
+                            powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a><br/>
+                            Data&Resources: <a href='https://trails-game.com' target={"_blank"} rel='noreferrer'>轨迹系列-Cafe</a>
                     </Typography>
                 </AccordionDetails>
             </Accordion>

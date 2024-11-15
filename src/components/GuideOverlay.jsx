@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Box, CircularProgress, Dialog, DialogContent, DialogTitle, IconButton, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types';
-import { Folder as FolderIcon, Close as CloseIcon } from '@material-ui/icons';
+import {Close as CloseIcon, Explore as ExploreIcon } from '@material-ui/icons';
 
 import { Viewer as ByteMDViewer } from '@bytemd/react';
 
@@ -12,7 +12,6 @@ import ThreeDModeMD from "../assets/docs/ThreeDMode.md";
 import OtherMD from "../assets/docs/Other.md";
 import StateCache from '@/assets/StateCache';
 import { observer } from 'mobx-react';
-
 
 // 记得图片的 minheight
 
@@ -65,8 +64,13 @@ const useStyles = makeStyles((theme) => ({
         width: "75%",
         // height:"calc(100% - 24px)",
         height: "100%",
-        overflowY: "scroll"
-
+        overflowY: "scroll",
+        "& .markdown-body":
+        {
+            "& ul,& ol":{
+                paddingLeft:"1.5em",
+            }
+        }
     },
     dialog: {
         // height:"350px"
@@ -171,7 +175,7 @@ const GuideOverlay = observer(function () {
         <Dialog open={!StateCache.guideShowd} onClose={onClose} maxWidth="sm" fullWidth className={classes.dialog}>
             <DialogTitle component={"h5"} className={classes.dialogTitle}>
                 <div className={classes.dialogTitleLayout}>
-                    <FolderIcon className={classes.dialogTitleIcon} />
+                    <ExploreIcon className={classes.dialogTitleIcon} color="secondary" />
                     <Typography variant="h6" className={classes.dialogTitleText}>
                         新手引导
                     </Typography>

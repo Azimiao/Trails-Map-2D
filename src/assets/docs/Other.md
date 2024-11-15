@@ -2,13 +2,16 @@
 
 - React-Leaflet
 - ByteMD
-- MUI V4
+- Material UI v4
 
 使用 Create-React-APP 构建。
 
 🎨 图标信息：
 - 授权协议：<a href="https://www.veryicon.com/icons/miscellaneous/geographic-information-mapping-icon-library/" target="_blank">jackyyhj(veryicon.com): Free for personal and commercial purpose.</a>
 - 基于现有图标，进行了二次修改编辑。
+
+📕 数据信息：
+- 游戏数据：<a href='https://trails-game.com' target="_blank">轨迹系列-Cafe</a>
 
 🖼️ 地图信息：
 - 版权：@falcom
