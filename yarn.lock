@@ -3342,7 +3342,7 @@ builtin-modules@^3.1.0:
   resolved "https://registry.npmmirror.com/builtin-modules/-/builtin-modules-3.3.0.tgz#cae62812b89801e9656336e46223e030386be7b6"
   integrity sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==
 
-bytemd@1.21.0:
+bytemd@1.21.0, bytemd@^1.21.0:
   version "1.21.0"
   resolved "https://registry.npmmirror.com/bytemd/-/bytemd-1.21.0.tgz#d330467e1bf280a2b7974b6bdeeeeec635879d2e"
   integrity sha512-6nc658omwzcLdc/lT24w8G2x5pptZXiMyrQPbFuHwhYbmrLnsmKLm+9klsOx2/Lg2cYHYb2WzVh7zKZ9MZCVdg==

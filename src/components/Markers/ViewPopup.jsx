@@ -6,7 +6,9 @@ import StateCache from "@/assets/StateCache";
 
 import { Viewer as ByteMDViewer } from "@bytemd/react";
 import { makeStyles } from "@material-ui/styles";
+import ImageLoadingPlugin from "../ImageLoadingPlugin";
 
+const plugins = [ImageLoadingPlugin()];
 
 const useStyles = makeStyles((theme)=>({
     ViewPopup:{
@@ -46,6 +48,14 @@ const useStyles = makeStyles((theme)=>({
             borderRadius:'5px',
             minHeight:'50px',
             background:"#f1f1f1ff",
+            // "&:after":{
+            //     position:"absolute",
+            //     width:"100%",
+            //     height:"50px",
+            //     left:0,
+            //     top:0,
+            //     background:url(),
+            // }
         },
         "& p":{
         marginTop:0,
@@ -96,6 +106,7 @@ const ViewPopup = (props)=>{
         <div className={classes.PopupContent}>
             <ByteMDViewer
                 value={content}
+                plugins={plugins}
             />
         </div>
         {
