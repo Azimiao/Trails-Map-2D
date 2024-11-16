@@ -8,8 +8,6 @@ import { Viewer as ByteMDViewer } from '@bytemd/react';
 import StateCache from '@/assets/StateCache';
 import { observer } from 'mobx-react';
 
-// 记得图片的 minheight
-
 TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,

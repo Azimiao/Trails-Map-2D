@@ -37,10 +37,10 @@ const useStyles = makeStyles((theme)=>({
     PopupContent:{
         width:'100%',
         margin:'12px 0px 24px 0px',
-        overflowY:'scroll',
+        overflowY:'auto',
         maxHeight:'300px',
         scrollbarWidth:'thin',
-        scrollbarColor:"rgb(255, 211, 68) rgb(218, 218, 218)",
+        scrollbarColor:"rgb(255, 211, 68) transparent",
         paddingRight:'12px',
         "& img":{
             maxWidth:'100%',
