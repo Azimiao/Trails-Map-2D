@@ -12,7 +12,7 @@ export default function ImageLoadingPlugin() {
                 // placeholder.style.width = `${img.offsetWidth || 200}px`;
                 // placeholder.style.height = `${img.offsetHeight || 150}px`;
                 placeholder.style.width = `100%`;
-                placeholder.style.height = `150px`;
+                placeholder.style.height = `180px`;
                 placeholder.style.background = "#f0f0f0";
                 placeholder.style.borderRadius = "5px";
                 placeholder.style.display = "inline-block";

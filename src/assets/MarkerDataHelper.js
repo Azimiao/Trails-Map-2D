@@ -1,8 +1,19 @@
 import { observable, runInAction } from "mobx";
-import markerListData from "./MarkerData.json";
 let MarkerDataHelper = observable(
     {
-        "data":markerListData,
+        "data":[],
+        RequestMarkerList(){
+            fetch("markerdata.json").then((res)=>{
+                res.json().then((jsonObj)=>{
+                    runInAction(()=>{
+                        this.data = jsonObj;
+                    })
+                })
+            }).catch(e=>{
+                console.log(e);
+                alert(e);
+            });
+        },
         GetDataListByLayer(layerId) {
             let item = this.data.filter(data => (data.layerId === layerId && data != null));
             if (item == null || item.length <= 0) {

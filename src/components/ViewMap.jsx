@@ -90,6 +90,11 @@ let ViewMap = observer(function (props) {
             }
         }, [map]);
 
+        useEffect(()=>{
+            if(MarkerDataHelper.data.length <= 0){
+                MarkerDataHelper.RequestMarkerList();
+            }
+        },[]);
         return null;
     }
     const markerRef1 = React.createRef();
