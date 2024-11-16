@@ -169,7 +169,7 @@ const MarkerEditor = observer(class MarkerEditorC extends Component {
                             e.preventDefault();
                         }}
                     >
-                        Save
+                        Ok
                     </button>
                 </div>
                 <button

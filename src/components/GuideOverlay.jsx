@@ -5,11 +5,6 @@ import {Close as CloseIcon, Explore as ExploreIcon } from '@material-ui/icons';
 
 import { Viewer as ByteMDViewer } from '@bytemd/react';
 
-import FirstStartMD from "../assets/docs/FirstStart.md";
-import ControlPanelMD from "../assets/docs/ControlPanel.md";
-import EditorModeMD from "../assets/docs/EditorMode.md";
-import ThreeDModeMD from "../assets/docs/ThreeDMode.md";
-import OtherMD from "../assets/docs/Other.md";
 import StateCache from '@/assets/StateCache';
 import { observer } from 'mobx-react';
 
@@ -203,19 +198,19 @@ const GuideOverlay = observer(function () {
                         <Tab label="伪3D模式" {...a11yProps(3)} />
                         <Tab label="版权声明" {...a11yProps(4)} />
                     </Tabs>
-                    <TabPanel value={value} index={0} targetMDFile={FirstStartMD}>
+                    <TabPanel value={value} index={0} targetMDFile={"docs/FirstStart.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={1} targetMDFile={ControlPanelMD}>
+                    <TabPanel value={value} index={1} targetMDFile={"docs/ControlPanel.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={2} targetMDFile={EditorModeMD}>
+                    <TabPanel value={value} index={2} targetMDFile={"docs/EditorMode.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={3} targetMDFile={ThreeDModeMD}>
+                    <TabPanel value={value} index={3} targetMDFile={"docs/ThreeDMode.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={4} targetMDFile={OtherMD}>
+                    <TabPanel value={value} index={4} targetMDFile={"docs/Other.md"}>
                         <CircularProgress />
                     </TabPanel>
                 </div>
