@@ -14,6 +14,8 @@ import StateCache from '@/assets/StateCache';
 import GuideOverlay from './GuideOverlay';
 import GitInfo from "react-git-info/macro";
 import TrailsTheme from './trailsTheme';
+import SettingsIcon from '@material-ui/icons/Settings';
+
 
 const gitInfo = GitInfo();
 
@@ -71,7 +73,7 @@ const ControlOverlay = observer(function () {
             <h1 style={{
                 textAlign: "center"
             }}>
-                {I18nHelper.GetTranslateString("control_panel")}
+                <SettingsIcon color='primary'/>{I18nHelper.GetTranslateString("control_panel")}
             </h1>
             <Accordion
                 defaultExpanded={true}
@@ -85,10 +87,7 @@ const ControlOverlay = observer(function () {
                 </AccordionSummary>
                 <AccordionDetails>
                     <FormControl component="fieldset" className={classes.formControl}>
-                        {/* <FormLabel component="legend">展示的层</FormLabel> */}
-                        <FormGroup
-                        // row sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}
-                        >
+                        <FormGroup>
                             <Grid container spacing={0}>
                                 {
                                     LayerDataHelper.data.map((item, index) => {
@@ -195,6 +194,7 @@ const ControlOverlay = observer(function () {
                     {
                         drawerState ? <ArrowForwardIcon /> : <ArrowBackIcon />
                     }
+                    <SettingsIcon />&nbsp;
                     {
                         drawerState ? I18nHelper.GetTranslateString("fold_up") : I18nHelper.GetTranslateString("control_panel")
                     }
