@@ -60,7 +60,11 @@ const useStyles = makeStyles((theme)=>({
         "& p":{
         marginTop:0,
         marginBottom:'0.5em'
-        }
+        },
+        "& p:last-child":{
+            marginTop:0,
+            marginBottom:0
+            }
     },
 
     PopUpSpace:{

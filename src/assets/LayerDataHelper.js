@@ -116,6 +116,16 @@ let LayerDataHelper = observable({
             "show": true
         },
         {
+            "id": 3001,
+            "key":"stonehenge",
+            "icon": "stonehenge.png",
+            "size": "L",
+            "showTitle": false,
+            "zIndexOffset":0,
+            "autoGroup": true,
+            "show": true
+        },
+        {
             "id": 4000,
             "key":"port",
             "icon": "port.png",

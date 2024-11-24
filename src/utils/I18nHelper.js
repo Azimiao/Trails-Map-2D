@@ -11,6 +11,7 @@ const I18nHelper = {
         "gate":"关所",
         "airport":"飞艇坪",
         "cave":"洞穴",
+        "stonehenge":"巨石遗迹",
         "port":"港口",
         "bridge":"桥",
         "school":"教育",
