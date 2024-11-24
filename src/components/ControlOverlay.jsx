@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import { Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Drawer, FormControlLabel, Grid } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -13,6 +13,7 @@ import I18nHelper from '@/utils/I18nHelper';
 import StateCache from '@/assets/StateCache';
 import GuideOverlay from './GuideOverlay';
 import GitInfo from "react-git-info/macro";
+import TrailsTheme from './trailsTheme';
 
 const gitInfo = GitInfo();
 
@@ -94,10 +95,13 @@ const ControlOverlay = observer(function () {
                                         return (
                                             <Grid item xs={6}>
                                                 <FormControlLabel
-                                                    item key={item.key}
-                                                    control={<Checkbox checked={item.show} onChange={(event, checked) => {
-                                                        LayerDataHelper.setShowStatus(item.id, checked);
-                                                    }} name={item.key} />}
+                                                    color="primary"
+                                                    item
+                                                    key={item.key}
+                                                    control={<Checkbox color="primary"
+                                                        checked={item.show} onChange={(event, checked) => {
+                                                            LayerDataHelper.setShowStatus(item.id, checked);
+                                                        }} name={item.key} />}
                                                     label={I18nHelper.GetTranslateString(item.key)}
                                                 />
                                             </Grid>)
@@ -117,31 +121,44 @@ const ControlOverlay = observer(function () {
                 >
                     <Typography className={classes.heading}>
                         {I18nHelper.GetTranslateString("special")}
-                        </Typography>
+                    </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                    <FormControlLabel
-                        item key={"open3D"}
-                        control={<Checkbox checked={StateCache.is3D} onChange={(event, checked) => {
-                            StateCache.Set3DMode(checked);
-                        }} name={"open3D"} />}
-                        label={I18nHelper.GetTranslateString("fake3d")}
-                    />
-                    <FormControlLabel
-                        item key={"editormode"}
-                        control={<Checkbox checked={StateCache.IsEditorMode} onChange={(event, checked) => {
-                            StateCache.SetEditorMode(checked);
-                        }} name={"editormode"} />}
-                        label={I18nHelper.GetTranslateString("editor_mode")}
-                    />
-                    <FormControlLabel
-                        item key={"guidemode"}
-                        control={<Checkbox checked={!StateCache.guideShowd} onChange={(event, checked) => {
-                            StateCache.SetGuideLayerValues(!checked);
-                        }} name={"guidemode"} />}
-                        label={I18nHelper.GetTranslateString("guidemode")}
-                    />
+                        <FormControlLabel
+                            item key={"open3D"}
+                            control={<Checkbox
+                                color="primary"
+                                checked={StateCache.is3D}
+                                onChange={(event, checked) => {
+                                    StateCache.Set3DMode(checked);
+                                }}
+                                name={"open3D"}
+                            />}
+                            label={I18nHelper.GetTranslateString("fake3d")}
+                        />
+                        <FormControlLabel
+                            item key={"editormode"}
+                            control={<Checkbox
+                                color="primary"
+                                checked={StateCache.IsEditorMode}
+                                onChange={(event, checked) => {
+                                    StateCache.SetEditorMode(checked);
+                                }}
+                                name={"editormode"}
+                            />}
+                            label={I18nHelper.GetTranslateString("editor_mode")}
+                        />
+                        <FormControlLabel
+                            item key={"guidemode"}
+                            control={<Checkbox color="primary"
+                                checked={!StateCache.guideShowd} onChange={(event, checked) => {
+                                    StateCache.SetGuideLayerValues(!checked);
+                                }}
+                                name={"guidemode"}
+                            />}
+                            label={I18nHelper.GetTranslateString("guidemode")}
+                        />
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -156,10 +173,10 @@ const ControlOverlay = observer(function () {
                 <AccordionDetails>
                     <Typography>
                         <h3>{I18nHelper.GetTranslateString("zemuria_map")}</h3>
-                            {I18nHelper.GetTranslateString("version")}: <a href={`https://github.com/Azimiao/Trails-Map-2D/commit/${gitInfo.commit.hash}`} target={"_blank"} rel='noreferrer'>{gitInfo.commit.shortHash}</a><br/>
-                            {I18nHelper.GetTranslateString("build")}: {new Date(gitInfo.commit.date).toLocaleString()}<br/>
-                            powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a><br/>
-                            Data&Resources: <a href='https://trails-game.com' target={"_blank"} rel='noreferrer'>轨迹系列-Cafe</a>
+                        {I18nHelper.GetTranslateString("version")}: <a href={`https://github.com/Azimiao/Trails-Map-2D/commit/${gitInfo.commit.hash}`} target={"_blank"} rel='noreferrer'>{gitInfo.commit.shortHash}</a><br />
+                        {I18nHelper.GetTranslateString("build")}: {new Date(gitInfo.commit.date).toLocaleString()}<br />
+                        powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a><br />
+                        Data&Resources: <a href='https://trails-game.com' target={"_blank"} rel='noreferrer'>轨迹系列-Cafe</a>
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -167,34 +184,36 @@ const ControlOverlay = observer(function () {
     );
 
     return (
-        <React.Fragment>
-            <Button
-                className={classes.button}
-                onClick={() => toggleDrawer(!drawerState)}
-                variant="contained"
-                color="secondary"
-            >
-                {
-                    drawerState ? <ArrowForwardIcon /> : <ArrowBackIcon />
-                }
-                {
-                    drawerState ? I18nHelper.GetTranslateString("fold_up") : I18nHelper.GetTranslateString("control_panel")
-                }
-            </Button>
-            <React.Fragment key={"right"}>
-                <Drawer
-                    className={classes.drawer}
-                    hideBackdrop={true}
-                    BackdropProps={{ invisible: true }}
-                    anchor={"right"}
-                    open={drawerState}
-                    onClose={(event, reason) => { }}
+        <ThemeProvider theme={TrailsTheme}>
+            <React.Fragment>
+                <Button
+                    className={classes.button}
+                    onClick={() => toggleDrawer(!drawerState)}
+                    variant="contained"
+                    color="primary"
                 >
-                    {list()}
-                </Drawer>
+                    {
+                        drawerState ? <ArrowForwardIcon /> : <ArrowBackIcon />
+                    }
+                    {
+                        drawerState ? I18nHelper.GetTranslateString("fold_up") : I18nHelper.GetTranslateString("control_panel")
+                    }
+                </Button>
+                <React.Fragment key={"right"}>
+                    <Drawer
+                        className={classes.drawer}
+                        hideBackdrop={true}
+                        BackdropProps={{ invisible: true }}
+                        anchor={"right"}
+                        open={drawerState}
+                        onClose={(event, reason) => { }}
+                    >
+                        {list()}
+                    </Drawer>
+                </React.Fragment>
+                <GuideOverlay />
             </React.Fragment>
-            <GuideOverlay/>
-        </React.Fragment>
+        </ThemeProvider>
     )
 });
 

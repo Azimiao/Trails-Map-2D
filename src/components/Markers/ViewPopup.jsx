@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme)=>({
         overflowY:'auto',
         maxHeight:'300px',
         scrollbarWidth:'thin',
-        scrollbarColor:"rgb(255, 211, 68) transparent",
+        scrollbarColor:"#ca7657 transparent",
         paddingRight:'12px',
         "& img":{
             maxWidth:'100%',
