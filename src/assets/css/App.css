@@ -20,3 +20,16 @@
     background-color: #e0e0e0;
   }
 }
+
+.leaflet-popup-content-wrapper{
+  background: rgba(34, 47, 45, 0.9) !important;
+  border: 2.5px solid #ffffffff !important;
+  border-radius: 10px !important; 
+  box-shadow: 0 4px 10px rgba(34, 47, 45, 0.8) !important; 
+  color: #ffffff !important; 
+}
+
+.leaflet-popup-close-button{
+  color:#ffffff !important;
+}
+

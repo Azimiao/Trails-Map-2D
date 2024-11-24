@@ -25,12 +25,17 @@ const useStyles = makeStyles((theme)=>({
         padding: '12px 0 0 0',
         textAlign:'left',
         fontWeight:'bold',
+        borderBottom:"2px solid #c9a472",
+        color:"#c9a472",
+        paddingBottom:"2px",
         "& a":{
             marginLeft:'0.5em',
             padding:'0.5em 0.5em',
             background:'#f1f1f1',
             borderRadius:'5px',
-            fontSize:'0.8em'
+            fontSize:'0.8em',
+            background:"transparent",
+            color:"#ca7657"
         }
     },
 
@@ -40,7 +45,7 @@ const useStyles = makeStyles((theme)=>({
         overflowY:'auto',
         maxHeight:'300px',
         scrollbarWidth:'thin',
-        scrollbarColor:"#ca7657 transparent",
+        scrollbarColor:"#ac9d8b transparent",
         paddingRight:'12px',
         "& img":{
             maxWidth:'100%',
@@ -109,7 +114,7 @@ const ViewPopup = (props)=>{
         </div>
         <div className={classes.PopupContent}>
             <ByteMDViewer
-                value={content}
+                value={content != null && content.length > 0 ? content : "暂无内容"}
                 plugins={plugins}
             />
         </div>
