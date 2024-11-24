@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
         // transform:'translate(-50%,-50%)',
         // zIndex:9999999,
         // borderRadius:"5px",
-        height: "350px",
+        height: "450px",
         maxHeight: "90vh",
     },
     tabs: {

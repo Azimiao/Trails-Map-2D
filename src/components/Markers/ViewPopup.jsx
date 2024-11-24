@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme)=>({
         "& a":{
             marginLeft:'0.5em',
             padding:'0.5em 0.5em',
-            background:'#f1f1f1',
             borderRadius:'5px',
             fontSize:'0.8em',
             background:"transparent",

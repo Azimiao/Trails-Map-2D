@@ -1,3 +1,13 @@
+# TRAILS-GAME-MAP-2D
+
+轨迹系列游戏-塞姆利亚大陆地图
+
+🚧 使用 React 开发，使用了如下开源组件：
+
+- React-Leaflet
+- ByteMD
+- Material UI v4
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
