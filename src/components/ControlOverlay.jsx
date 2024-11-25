@@ -91,7 +91,11 @@ const ControlOverlay = observer(function () {
                                 {
                                     LayerDataHelper.data.map((item, index) => {
                                         return (
-                                            <Grid item xs={6}>
+                                            <Grid 
+                                            item 
+                                            xs={6}
+                                            key={`grid-view-layer-${item.id}`}
+                                            >
                                                 <FormControlLabel
                                                     color="primary"
                                                     key={item.key}

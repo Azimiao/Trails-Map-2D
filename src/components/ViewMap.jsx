@@ -134,13 +134,14 @@ let ViewMap = observer(function (props) {
                                 <MarkerClusterGroup
                                     // SpiderfyOnMaxZoom={true} 
                                     // disableClusteringAtZoom={3}
-                                    key={layerData.id}
+                                    key={`layerGroup-${layerData.id}`}
                                     maxClusterRadius={50}
                                 >
                                     {
                                         MarkerDataHelper.GetDataListByLayer(layerData.id)?.map((originMarkData, index) => {
                                             return (
                                                 <ViewMarker
+                                                    key={`marker-${originMarkData.id}`}
                                                     myRef={markerRef1}
                                                     onEditClick={OnEditClick}
                                                     onDelClick={OnDelClick}
