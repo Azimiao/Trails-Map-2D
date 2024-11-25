@@ -1,6 +1,5 @@
 import React from 'react';
-import { makeStyles, ThemeProvider } from '@material-ui/styles';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Drawer, FormControlLabel, Grid } from '@material-ui/core';
+import { makeStyles, Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Drawer, FormControlLabel, Grid, useMediaQuery } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import LayerDataHelper from '@/assets/LayerDataHelper';
@@ -13,7 +12,6 @@ import I18nHelper from '@/utils/I18nHelper';
 import StateCache from '@/assets/StateCache';
 import GuideOverlay from './GuideOverlay';
 import GitInfo from "react-git-info/macro";
-import TrailsTheme from './trailsTheme';
 import SettingsIcon from '@material-ui/icons/Settings';
 
 
@@ -29,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
     },
     drawer: {
         pointerEvents: "none",
-        "& .MuiPaper-root": {
-            pointerEvents: "auto"
-        }
+    },
+    drawerPaper: {
+        pointerEvents: "auto"
     },
     button: {
         position: "fixed",
@@ -63,6 +61,7 @@ const ControlOverlay = observer(function () {
         setDrawerState(open);
     };
 
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     const list = () => (
         <div
@@ -73,7 +72,7 @@ const ControlOverlay = observer(function () {
             <h1 style={{
                 textAlign: "center"
             }}>
-                <SettingsIcon color='primary'/>{I18nHelper.GetTranslateString("control_panel")}
+                <SettingsIcon color='primary' />{I18nHelper.GetTranslateString("control_panel")}
             </h1>
             <Accordion
                 defaultExpanded={true}
@@ -95,7 +94,6 @@ const ControlOverlay = observer(function () {
                                             <Grid item xs={6}>
                                                 <FormControlLabel
                                                     color="primary"
-                                                    item
                                                     key={item.key}
                                                     control={<Checkbox color="primary"
                                                         checked={item.show} onChange={(event, checked) => {
@@ -125,7 +123,7 @@ const ControlOverlay = observer(function () {
                 <AccordionDetails>
                     <Typography>
                         <FormControlLabel
-                            item key={"open3D"}
+                            key={"open3D"}
                             control={<Checkbox
                                 color="primary"
                                 checked={StateCache.is3D}
@@ -137,9 +135,10 @@ const ControlOverlay = observer(function () {
                             label={I18nHelper.GetTranslateString("fake3d")}
                         />
                         <FormControlLabel
-                            item key={"editormode"}
+                            key={"editormode"}
                             control={<Checkbox
                                 color="primary"
+                                disabled={isMobile}
                                 checked={StateCache.IsEditorMode}
                                 onChange={(event, checked) => {
                                     StateCache.SetEditorMode(checked);
@@ -149,7 +148,7 @@ const ControlOverlay = observer(function () {
                             label={I18nHelper.GetTranslateString("editor_mode")}
                         />
                         <FormControlLabel
-                            item key={"guidemode"}
+                            key={"guidemode"}
                             control={<Checkbox color="primary"
                                 checked={!StateCache.guideShowd} onChange={(event, checked) => {
                                     StateCache.SetGuideLayerValues(!checked);
@@ -171,7 +170,7 @@ const ControlOverlay = observer(function () {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        <h3>{I18nHelper.GetTranslateString("zemuria_map")}</h3>
+                        <span style={{fontWeight:"bold"}}>{I18nHelper.GetTranslateString("zemuria_map")}</span><br />
                         {I18nHelper.GetTranslateString("version")}: <a href={`https://github.com/Azimiao/Trails-Map-2D/commit/${gitInfo.commit.hash}`} target={"_blank"} rel='noreferrer'>{gitInfo.commit.shortHash}</a><br />
                         {I18nHelper.GetTranslateString("build")}: {new Date(gitInfo.commit.date).toLocaleString()}<br />
                         powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a><br />
@@ -182,8 +181,8 @@ const ControlOverlay = observer(function () {
         </div>
     );
 
+
     return (
-        <ThemeProvider theme={TrailsTheme}>
             <React.Fragment>
                 <Button
                     className={classes.button}
@@ -195,8 +194,13 @@ const ControlOverlay = observer(function () {
                         drawerState ? <ArrowForwardIcon /> : <ArrowBackIcon />
                     }
                     <SettingsIcon />&nbsp;
+
                     {
-                        drawerState ? I18nHelper.GetTranslateString("fold_up") : I18nHelper.GetTranslateString("control_panel")
+                        isMobile ?
+                            null
+                            : drawerState ?
+                                I18nHelper.GetTranslateString("fold_up")
+                                : I18nHelper.GetTranslateString("control_panel")
                     }
                 </Button>
                 <React.Fragment key={"right"}>
@@ -207,13 +211,13 @@ const ControlOverlay = observer(function () {
                         anchor={"right"}
                         open={drawerState}
                         onClose={(event, reason) => { }}
+                        PaperProps={{className:classes.drawerPaper}}
                     >
                         {list()}
                     </Drawer>
                 </React.Fragment>
                 <GuideOverlay />
             </React.Fragment>
-        </ThemeProvider>
     )
 });
 

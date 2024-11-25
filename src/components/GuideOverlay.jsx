@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, CircularProgress, Dialog, DialogContent, DialogTitle, IconButton, makeStyles, Tab, Tabs, ThemeProvider, Typography } from '@material-ui/core'
+import { Box, CircularProgress, Dialog, DialogContent, DialogTitle, IconButton, makeStyles, Tab, Tabs, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types';
 import {Close as CloseIcon, Explore as ExploreIcon } from '@material-ui/icons';
 
@@ -7,7 +7,6 @@ import { Viewer as ByteMDViewer } from '@bytemd/react';
 
 import StateCache from '@/assets/StateCache';
 import { observer } from 'mobx-react';
-import TrailsTheme from './trailsTheme';
 
 TabPanel.propTypes = {
     children: PropTypes.node,
@@ -166,7 +165,6 @@ const GuideOverlay = observer(function () {
     };
 
     return (
-        <ThemeProvider theme={TrailsTheme}>
         <Dialog open={!StateCache.guideShowd} onClose={onClose} maxWidth="sm" fullWidth className={classes.dialog}>
             <DialogTitle component={"h5"} className={classes.dialogTitle}>
                 <div className={classes.dialogTitleLayout}>
@@ -217,7 +215,6 @@ const GuideOverlay = observer(function () {
                 </div>
             </DialogContent>
         </Dialog>
-        </ThemeProvider>
     )
 });
 

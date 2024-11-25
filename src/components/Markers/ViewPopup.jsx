@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme)=>({
 
     PopupContent:{
         width:'100%',
-        margin:'12px 0px 24px 0px',
+        margin:'12px 0px 12px 0px',
         overflowY:'auto',
         maxHeight:'300px',
         scrollbarWidth:'thin',
