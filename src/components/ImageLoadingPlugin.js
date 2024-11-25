@@ -5,7 +5,11 @@ export default function ImageLoadingPlugin() {
             if (imgs.length === 0) {
                 return;
             }
+            
             imgs.forEach(img => {
+                if(img.complete){
+                    return;
+                } 
                 // 创建骨架占位符
                 const placeholder = document.createElement("div");
                 placeholder.className = "image-placeholder";
