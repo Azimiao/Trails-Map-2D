@@ -80,7 +80,10 @@ const useStyles = makeStyles((theme) => ({
         //  margin: '0 auto',
         // padding: '8',
         paddingLeft: 0,
-        paddingRight: 0
+        paddingRight: 0,
+        "& img":{
+            maxWidth:"100%",
+        }
     },
     dialogTitleLayout: {
         display: 'flex',
