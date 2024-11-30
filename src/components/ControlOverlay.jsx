@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Drawer, FormControlLabel, Grid, useMediaQuery } from '@material-ui/core';
+import { makeStyles, Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, Drawer, FormControlLabel, Grid, useMediaQuery, Card } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import LayerDataHelper from '@/assets/LayerDataHelper';
@@ -13,6 +13,7 @@ import StateCache from '@/assets/StateCache';
 import GuideOverlay from './GuideOverlay';
 import GitInfo from "react-git-info/macro";
 import SettingsIcon from '@material-ui/icons/Settings';
+import MusicPlayer from './MusicPlayer';
 
 
 const gitInfo = GitInfo();
@@ -47,6 +48,21 @@ const useStyles = makeStyles((theme) => ({
         width: 'auto',
     },
     heading: {
+    },
+
+    musicPlayer:{
+        position:"absolute",
+        bottom:0,
+        left: "50%",
+        transform: "translateX(-50%)",
+        width:"100%",
+        maxWidth:"450px",
+        zIndex:1000,
+        background: "rgba(34, 47, 45, 0.9) !important",
+        borderTop: "2px solid  #c9a472 !important",
+        borderRadius: "10px 10px 0px 0px !important",
+        boxShadow: "0 4px 10px rgba(34, 47, 45, 0.8) !important",
+        color:"white"
     }
 }));
 
@@ -220,6 +236,9 @@ const ControlOverlay = observer(function () {
                         {list()}
                     </Drawer>
                 </React.Fragment>
+                <Card className={classes.musicPlayer}>
+                    <MusicPlayer />
+                </Card>
                 <GuideOverlay />
             </React.Fragment>
     )

@@ -9,6 +9,9 @@ const TrailsTheme = createTheme({
           secondary: {
             main: '#ac9d8b',
           },
+          action:{
+            selected:'#ca7657'
+          }
     },
   });
 
