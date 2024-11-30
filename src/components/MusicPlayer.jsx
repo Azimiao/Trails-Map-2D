@@ -17,6 +17,7 @@ import {
     ExpandLess,
     ExpandMore,
     MusicNote,
+    Close,
 } from "@material-ui/icons";
 
 import BGMHelper from "@/assets/BGMHelper";
@@ -25,7 +26,7 @@ import BGMHelper from "@/assets/BGMHelper";
  * 媒体播放器控件
  * AI 辅助编写，待整理
  */
-const MusicPlayer = () => {
+const MusicPlayer = (props) => {
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -146,12 +147,28 @@ const MusicPlayer = () => {
         };
     }, [currentSongIndex, isPlaying]); // eslint-disable-line react-hooks/exhaustive-deps
 
+    useEffect(()=>{
+        return ()=>{
+            if(audio){
+                audio.pause();
+                audio.remove();
+            }
+        };
+    },[]);// eslint-disable-line react-hooks/exhaustive-deps
+
     return (
         <Box px={2} py={1} >
             {/* 标题 */}
             <Typography variant="body1" color="primary" gutterBottom>
                 <MusicNote style={{verticalAlign:"middle"}} />&nbsp;
                 {playlist[currentSongIndex].title}
+                <IconButton style={{position:"absolute",padding:"2px",right:"1rem"}} size="medium" color="primary" onClick={()=>{
+                    if(props.onCloseClick){
+                        props.onCloseClick();
+                    }
+                }}>
+                        <Close fontSize="medium" />
+                </IconButton>
             </Typography>
 
             {/* 进度条 */}

@@ -50,19 +50,19 @@ const useStyles = makeStyles((theme) => ({
     heading: {
     },
 
-    musicPlayer:{
-        position:"absolute",
-        bottom:0,
+    musicPlayer: {
+        position: "absolute",
+        bottom: 0,
         left: "50%",
         transform: "translateX(-50%)",
-        width:"100%",
-        maxWidth:"450px",
-        zIndex:1000,
+        width: "100%",
+        maxWidth: "450px",
+        zIndex: 1000,
         background: "rgba(34, 47, 45, 0.9) !important",
         borderTop: "2px solid  #c9a472 !important",
         borderRadius: "10px 10px 0px 0px !important",
         boxShadow: "0 4px 10px rgba(34, 47, 45, 0.8) !important",
-        color:"white"
+        color: "white"
     }
 }));
 
@@ -107,10 +107,10 @@ const ControlOverlay = observer(function () {
                                 {
                                     LayerDataHelper.data.map((item, index) => {
                                         return (
-                                            <Grid 
-                                            item 
-                                            xs={6}
-                                            key={`grid-view-layer-${item.id}`}
+                                            <Grid
+                                                item
+                                                xs={6}
+                                                key={`grid-view-layer-${item.id}`}
                                             >
                                                 <FormControlLabel
                                                     color="primary"
@@ -177,6 +177,17 @@ const ControlOverlay = observer(function () {
                             />}
                             label={I18nHelper.GetTranslateString("guidemode")}
                         />
+                        <FormControlLabel
+                            key={"musicplayer"}
+                            control={<Checkbox color="primary"
+                                checked={StateCache.musicPlayerShowd} onChange={(event, checked) => {
+                                    StateCache.SetMusicStatus(checked);
+                                }}
+                                name={"musicplayer"}
+                            />}
+                            label={I18nHelper.GetTranslateString("musicplayer")}
+                        />
+
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -190,7 +201,7 @@ const ControlOverlay = observer(function () {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        <span style={{fontWeight:"bold"}}>{I18nHelper.GetTranslateString("zemuria_map")}</span><br />
+                        <span style={{ fontWeight: "bold" }}>{I18nHelper.GetTranslateString("zemuria_map")}</span><br />
                         {I18nHelper.GetTranslateString("version")}: <a href={`https://github.com/Azimiao/Trails-Map-2D/commit/${gitInfo.commit.hash}`} target={"_blank"} rel='noreferrer'>{gitInfo.commit.shortHash}</a><br />
                         {I18nHelper.GetTranslateString("build")}: {new Date(gitInfo.commit.date).toLocaleString()}<br />
                         powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a><br />
@@ -203,44 +214,50 @@ const ControlOverlay = observer(function () {
 
 
     return (
-            <React.Fragment>
-                <Button
-                    className={classes.button}
-                    onClick={() => toggleDrawer(!drawerState)}
-                    variant="contained"
-                    color="primary"
-                >
-                    {
-                        drawerState ? <ArrowForwardIcon /> : <ArrowBackIcon />
-                    }
-                    <SettingsIcon />&nbsp;
+        <React.Fragment>
+            <Button
+                className={classes.button}
+                onClick={() => toggleDrawer(!drawerState)}
+                variant="contained"
+                color="primary"
+            >
+                {
+                    drawerState ? <ArrowForwardIcon /> : <ArrowBackIcon />
+                }
+                <SettingsIcon />&nbsp;
 
-                    {
-                        isMobile ?
-                            null
-                            : drawerState ?
-                                I18nHelper.GetTranslateString("fold_up")
-                                : I18nHelper.GetTranslateString("control_panel")
-                    }
-                </Button>
-                <React.Fragment key={"right"}>
-                    <Drawer
-                        className={classes.drawer}
-                        hideBackdrop={true}
-                        BackdropProps={{ invisible: true }}
-                        anchor={"right"}
-                        open={drawerState}
-                        onClose={(event, reason) => { }}
-                        PaperProps={{className:classes.drawerPaper}}
-                    >
-                        {list()}
-                    </Drawer>
-                </React.Fragment>
-                <Card className={classes.musicPlayer}>
-                    <MusicPlayer />
-                </Card>
-                <GuideOverlay />
+                {
+                    isMobile ?
+                        null
+                        : drawerState ?
+                            I18nHelper.GetTranslateString("fold_up")
+                            : I18nHelper.GetTranslateString("control_panel")
+                }
+            </Button>
+            <React.Fragment key={"right"}>
+                <Drawer
+                    className={classes.drawer}
+                    hideBackdrop={true}
+                    BackdropProps={{ invisible: true }}
+                    anchor={"right"}
+                    open={drawerState}
+                    onClose={(event, reason) => { }}
+                    PaperProps={{ className: classes.drawerPaper }}
+                >
+                    {list()}
+                </Drawer>
             </React.Fragment>
+            {StateCache.musicPlayerShowd ?
+                <Card className={classes.musicPlayer}>
+                    <MusicPlayer onCloseClick={()=>{
+                        StateCache.SetMusicStatus(false)
+                    }} />
+                </Card>
+                : null
+            }
+
+            <GuideOverlay />
+        </React.Fragment>
     )
 });
 

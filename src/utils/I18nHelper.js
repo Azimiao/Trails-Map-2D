@@ -28,7 +28,8 @@ const I18nHelper = {
         "version": "版本",
         "build":"构建",
         "time":"时间",
-        "guidemode":"新手引导"
+        "guidemode":"新手引导",
+        "musicplayer":"音乐播放",
     },
     GetTranslateString(key){
         return this.translate_cn.hasOwnProperty(key) ? this.translate_cn[key] : key;

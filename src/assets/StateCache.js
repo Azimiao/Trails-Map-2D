@@ -55,6 +55,12 @@ let StateCache = observable(
             runInAction(() => {
                 this.guideShowd = state;
             });
+        },
+        musicPlayerShowd:true,
+        SetMusicStatus(status){
+            runInAction(()=>{
+                this.musicPlayerShowd = status;
+            })
         }
     },
 
