@@ -32,6 +32,7 @@ const MusicPlayer = () => {
     const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
     const [currentTime, setCurrentTime] = useState("0:00");
     const [duration, setDuration] = useState("0:00");
+    const [prevIndex,setPrevIndex] = useState(-1);
 
     const [audio] = useState(new Audio());
     const audioRef = audio;
@@ -120,7 +121,11 @@ const MusicPlayer = () => {
         const audio = audioRef;
 
         // 加载新音频
-        audio.src = playlist[currentSongIndex].url;
+        if(!audio.src || prevIndex !== currentSongIndex)
+        {
+            audio.src = playlist[currentSongIndex].url;
+            setPrevIndex(currentSongIndex); 
+        }
         // audio.load();
 
         // 自动播放
