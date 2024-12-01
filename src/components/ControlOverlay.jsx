@@ -206,7 +206,10 @@ const ControlOverlay = observer(function () {
                         {I18nHelper.GetTranslateString("version")}: <a href={`https://github.com/Azimiao/Trails-Map-2D/commit/${gitInfo.commit.hash}`} target={"_blank"} rel='noreferrer'>{gitInfo.commit.shortHash}</a><br />
                         {I18nHelper.GetTranslateString("build")}: {new Date(gitInfo.commit.date).toLocaleString()}<br />
                         powered by <a href='https://www.azimiao.com' target={"_blank"} rel='noreferrer'>azimiao.com</a><br />
-                        Data&Resources: <a href='https://trails-game.com' target={"_blank"} rel='noreferrer'>轨迹系列-Cafe</a>
+                        Data&Resources: <a href='https://trails-game.com' target={"_blank"} rel='noreferrer'>轨迹系列-Cafe</a><br />
+                        Falcom: <a href='https://falcom.trails-game.com/kiseki' target={"_blank"} rel='noreferrer'>Kiseki series portal site</a>
+                        <p>We have no commercial relationship with falcom, and the use of the content follows the falcom license agreement(such as the 音楽フリー宣言)</p>
+
                     </Typography>
                 </AccordionDetails>
             </Accordion>

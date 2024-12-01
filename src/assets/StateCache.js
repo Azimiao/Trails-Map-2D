@@ -47,7 +47,6 @@ let StateCache = observable(
         SetDefaultLayerValues(layers) {
             runInAction(() => {
                 this.ShowingLayer = layers;
-                console.log("setItem:" + layers);
             })
         },
         guideShowd: true,

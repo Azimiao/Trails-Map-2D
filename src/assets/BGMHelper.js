@@ -1,6 +1,10 @@
 const importAllBGM = (requireContext) => {
     let bgm = [
         {
+            title: "空-Shine of Eidos ~空の軌跡~",
+            url:"https://book.trails-game.com/bgms/sora-sc/Shine of Eidos ~空の軌跡~.mp3",
+        },
+        {
             title: "空-風を共に舞う気持ち",
             url:"https://book.trails-game.com/bgms/sora-fc/風を共に舞う気持ち.mp3",
         },

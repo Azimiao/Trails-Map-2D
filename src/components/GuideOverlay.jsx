@@ -194,25 +194,26 @@ const GuideOverlay = observer(function () {
                         className={classes.tabs}
 
                     >
-                        <Tab label="地图操作" {...a11yProps(0)} />
-                        <Tab label="控制面板" {...a11yProps(1)} />
-                        <Tab label="编辑模式" {...a11yProps(2)} />
-                        <Tab label="伪3D模式" {...a11yProps(3)} />
-                        <Tab label="版权声明" {...a11yProps(4)} />
+                        <Tab label="版权声明" {...a11yProps(0)} />
+                        <Tab label="地图操作" {...a11yProps(1)} />
+                        <Tab label="控制面板" {...a11yProps(2)} />
+                        <Tab label="编辑模式" {...a11yProps(3)} />
+                        <Tab label="伪3D模式" {...a11yProps(4)} />
+
                     </Tabs>
-                    <TabPanel value={value} index={0} targetMDFile={"docs/FirstStart.md"}>
+                    <TabPanel value={value} index={0} targetMDFile={"docs/Other.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={1} targetMDFile={"docs/ControlPanel.md"}>
+                    <TabPanel value={value} index={1} targetMDFile={"docs/FirstStart.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={2} targetMDFile={"docs/EditorMode.md"}>
+                    <TabPanel value={value} index={2} targetMDFile={"docs/ControlPanel.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={3} targetMDFile={"docs/ThreeDMode.md"}>
+                    <TabPanel value={value} index={3} targetMDFile={"docs/EditorMode.md"}>
                         <CircularProgress />
                     </TabPanel>
-                    <TabPanel value={value} index={4} targetMDFile={"docs/Other.md"}>
+                    <TabPanel value={value} index={4} targetMDFile={"docs/ThreeDMode.md"}>
                         <CircularProgress />
                     </TabPanel>
                 </div>
