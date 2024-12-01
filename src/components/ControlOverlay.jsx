@@ -62,7 +62,8 @@ const useStyles = makeStyles((theme) => ({
         borderTop: "2px solid  #c9a472 !important",
         borderRadius: "10px 10px 0px 0px !important",
         boxShadow: "0 4px 10px rgba(34, 47, 45, 0.8) !important",
-        color: "white"
+        color: "white",
+        overflow: "visible !important",
     }
 }));
 
@@ -249,9 +250,7 @@ const ControlOverlay = observer(function () {
             </React.Fragment>
             {StateCache.musicPlayerShowd ?
                 <Card className={classes.musicPlayer}>
-                    <MusicPlayer onCloseClick={()=>{
-                        StateCache.SetMusicStatus(false)
-                    }} />
+                    <MusicPlayer />
                 </Card>
                 : null
             }
