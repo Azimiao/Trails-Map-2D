@@ -24,6 +24,13 @@ import ControlOverlay from "./ControlOverlay";
 
 const queueItem = new Queue();
 
+// const createClusterCustomIcon = function (cluster,icon) {
+//     return L.divIcon({
+//       html: `<span><img style="width:100%;height:100%;" src="${icon}"/>${cluster.getChildCount()}</span>`,
+//       className: 'custom-marker-cluster',
+//       iconSize: L.point(33, 33, true),
+//     })
+// }
 
 let ViewMap = observer(function (props) {
 
@@ -135,6 +142,7 @@ let ViewMap = observer(function (props) {
                                     // SpiderfyOnMaxZoom={true} 
                                     // disableClusteringAtZoom={3}
                                     key={`layerGroup-${layerData.id}`}
+                                    // iconCreateFunction={(c)=>createClusterCustomIcon(c,IconHelper.getIcon(layerData.icon))}
                                     maxClusterRadius={50}
                                 >
                                     {

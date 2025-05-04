@@ -7,7 +7,7 @@ let LayerDataHelper = observable({
         {
             "id": 0,
             "key": "country",
-            "icon": "unknown.png",
+            "icon": "country-2.png",
             "size": "XXXL",
             "showTitle": true,
             "zIndexOffset":999999,
